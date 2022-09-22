@@ -39,7 +39,6 @@ function assignFighters(humanFighter) {
 
 // Verifies that our input array contains an odd number of elements. Also lets me practice ternerys!
 function checkForOddness(array) {
-  console.log(`Check for oddness complete`)
   if (array.length % 2 !== 0) {
     game.isOdd = false
   }
@@ -47,30 +46,26 @@ function checkForOddness(array) {
 
 // Finds the midpoint of our input array (based on array length, not array index position)
 function findMidpoint(array) {
-  console.log(`Midpoint determined`)
   game.midpoint = Math.ceil(array.length / 2)
 }
 
 // Runs a standard for loop, but tracks our position within the array starting from the midpoint instead of from index position 0. The tracker will wrap once it reaches the end of the array and start at the beginning. 
 function findFighterOffset(midpoint, array, fighter) {
-  console.log(`Fighter offset established`)
   for (var i = 0; i < array.length; i++) {
-    var offset = (i + midpoint) % array.length
-    if (fighter === array[offsetTracker]) {
-      human.offset = offset
+    var offset = (i + midpoint - 1) % array.length
+    if (fighter === array[offset]) {
+      human.offset = i
     }
   }
 }
 
 // Creates a new array, unique to this turn, which places the human selected fighter at the midpoint of the array using the offset. It maintains all other relationships within the array as if the array had wrapped from the end back to the beginning.
-function centerFighterOnMidpoint(array, playerOffset) {
-  var centeredFighters = []
-  for (var i = 0; i < fighters.length; i++) {
-    var offsetTracker = (i + playerOffset - 1) % array.length
-    centeredFighters.push(fighters[offsetTracker])
+function centerFighterOnMidpoint(array, humanOffset) {
+  for (var i = 0; i < array.length; i++) {
+    var offset = (i + humanOffset) % array.length
+    game.centeredFighters.push(array[offset])
   }
-  console.log(`Fighter centered on midpoint`)
-  game.centeredFighters = centeredFighters
+  console.log(game.centeredFighters)
 }
 
 function findComputerIndex(centeredArray, fighter) {
@@ -79,11 +74,10 @@ function findComputerIndex(centeredArray, fighter) {
 
 // Checks the location of the computer fighter relative to the midpoint of the array to determine if the round is a win/loss/draw.
 function determineWinner(computerFighter, humanFighter, midpoint) {
-  console.log(`Winner determined`)
   if (computer.index === midpoint) {
     return `You both chose ${computerFighter}, it's a draw!`
   }
-  else if (computer.index <= midpoint) {
+  else if (computer.index < midpoint) {
     return `Your opponent's ${computerFighter} beats your ${humanFighter}! Defeat!`
   }
   else {
@@ -92,11 +86,11 @@ function determineWinner(computerFighter, humanFighter, midpoint) {
 }
 
 assignPlayers()
-beginNewGame(hardFighters, hard)
+beginNewGame(hardFighters, 'hard')
 assignFighters(`lizard`)
 checkForOddness(game.fighters)
 findMidpoint(game.fighters)
 findFighterOffset(game.midpoint, game.fighters, human.fighter)
 centerFighterOnMidpoint(game.fighters, human.offset)
-findComputerIndex(game.centeredFighters, computer.index)
+findComputerIndex(game.centeredFighters, computer.fighter)
 console.log(determineWinner(computer.fighter, human.fighter, game.midpoint))
