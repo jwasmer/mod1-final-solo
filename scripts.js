@@ -41,9 +41,9 @@ function findMidpoint(array) {
 // Runs a standard for loop, but tracks our position within the array starting from the midpoint instead of from index position 0. The tracker will wrap once it reaches the end of the array and start at the beginning. 
 function findFighterOffset(midpoint, array, fighter) {
   for (var i = 0; i < array.length; i++) {
-    var offsetTracker = (i + midpoint) % array.length
+    var offset = (i + midpoint) % array.length
     if (fighter === array[offsetTracker]) {
-      return offsetTracker
+      return offset
     }
   }
 }
