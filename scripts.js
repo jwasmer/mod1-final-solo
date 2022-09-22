@@ -32,3 +32,8 @@ function chooseFighter() {
 // Step 3: Assign some kind of offset value to each element in the array (elements may need to be an object or array themselves for this to work). This offset will represent where our starting position in the array must be for us to consider that element a midpoint. For instance, in an array of 5 elements, the 3rd element (2nd index position) will have an offset value of 0 as it already occupies the midpoint position of the array--[[0], [1], [2], [3], [4]]. The 4th element will have an offset of 1, as our starting position in the array will need to be 1 for that element to be at the array's midpoint [[1], [2], [3], [4], [0]].
 // Step 4: Look up the offset value of our selected fighter in the array and shift the array (probably just make a new array) to place that fighter at its midpoint.
 // Step 5: At this point, everything to the left beats the human fighter, and everything to the right is beaten by the human fighter. Should allow players to make their own array and build their own rock/paper/scissors matches dynamically!
+
+// Verifies that our input array contains an odd number of elements. Also lets me practice ternerys!
+function checkArrayForOddness(array) {
+  array.length % 2 === 0 ? true : false
+}
