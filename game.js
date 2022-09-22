@@ -1,7 +1,7 @@
 class Game {
-  constructor(gameType) {
+  constructor(fightersArray) {
     this.gameMode;
-    this.fighters = {}
+    this.fighters = []
     this.winConditions = {}
   }
   updateGameType(mode) {
@@ -12,9 +12,6 @@ class Game {
     if (this.gameMode === `hard`) {
       this.winConditions = hardWinConditions
     }
-  }
-  chooseFighter(fighter) {
-    console.log(`You've chosen ${fighter}!`)
   }
 }
 

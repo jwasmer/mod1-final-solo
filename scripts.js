@@ -2,9 +2,9 @@ var classicFighters = ['rock', 'paper', 'scissors']
 var hardFighters = ['rock', 'paper', 'scissors', 'lizard', 'spock']
 var customFighters = []
 
-var human = new Person();
-var computer = new Person();
-var game = new Game();
+var human;
+var computer;
+var game;
 
 // Pseudocode
 // Goal: To build a system that would be able to resolve a rock/paper/scissors game of indefinite size using the position of each fighter element within an array to determine which other fighter elements it will defeat or be defeated by.
@@ -22,6 +22,7 @@ var game = new Game();
 
 // Verifies that our input array contains an odd number of elements. Also lets me practice ternerys!
 function checkForOddness(array) {
+  console.log(`Check for oddness complete`)
   return array.length % 2 === 0 ? true : false
 }
 
@@ -32,15 +33,18 @@ function verifyFighter(humanFighter, array) {
       return true
     }
   }
+  console.log(`Fighter verification complete`)
 }
 
 // Finds the midpoint of our input array (based on array length, not array index position)
 function findMidpoint(array) {
+  console.log(`Midpoint determined`)
   return Math.ceil(array.length / 2)
 }
 
 // Runs a standard for loop, but tracks our position within the array starting from the midpoint instead of from index position 0. The tracker will wrap once it reaches the end of the array and start at the beginning. 
 function findFighterOffset(midpoint, array, fighter) {
+  console.log(`Fighter offset established`)
   for (var i = 0; i < array.length; i++) {
     var offset = (i + midpoint) % array.length
     if (fighter === array[offsetTracker]) {
@@ -56,12 +60,14 @@ function centerFighterOnMidpoint(array, playerOffset) {
     var offsetTracker = (i + playerOffset - 1) % array.length
     centeredFighters.push(fighters[offsetTracker])
   }
+  console.log(`Fighter centered on midpoint`)
   return centeredFighters
 }
 
 // Checks the location of the computer fighter relative to the midpoint of the array to determine if the round is a win/loss/draw.
 function determineWinner(computerFighter, humanFighter, centeredArray, midpoint) {
   var computerIndex = centeredArray.indexOf(computerFighter) + 1
+  console.log(`Winner determined`)
   if (computerIndex === midpoint) {
     return `You both chose ${computerFighter}, it's a draw!`
   }
@@ -72,3 +78,22 @@ function determineWinner(computerFighter, humanFighter, centeredArray, midpoint)
     return `Your ${humanFighter} defeats your opponent's ${computerFighter}! Victory!`
   }
 }
+
+// Instantiates Person class for human and computer
+function assignPlayers() {
+  human = new Person()
+  computer = new Person()
+}
+
+// Instantiates a new game session from the Game class
+function beginNewGame(fightersArray) {
+  game = new Game(fightersArray)
+}
+
+// Players select their fighters and a turn begins
+function assignFighters() {
+  human.takeTurn(`lizard`)
+  computer.takeTurn()
+}
+
+// checkForOddness(hardFighters)
