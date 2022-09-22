@@ -42,3 +42,12 @@ function checkArrayForOddness(array) {
 function findArrayMidpoint(array) {
   return Math.ceil(array.length / 2) - 1
 }
+
+// Runs a standard for loop, but tracks our position within the array starting from the midpoint instead of from index position 0. The tracker will wrap once it reaches the end of the array and start at the beginning.
+function addOffsetValues(array) {
+  var midpoint = findArrayMidpoint(array)
+  for (var i = 0; i < array.length; i++) {
+    var midpointIndexTracker = (i + midpoint) % array.length
+    array[midpointIndexTracker].push(i)
+  }
+}
