@@ -5,20 +5,6 @@ var human = new Person();
 var computer = new Person();
 var game = new Game();
 
-function newGame() {
-  var mode = prompt("choose your game mode! (classic or hard)")
-  game.updateGameType(mode)
-  chooseFighter()
-}
-
-function chooseFighter() {
-  var fighter = prompt(`choose your fighter! (rock, paper, or scissors)`)
-  human.takeTurn(fighter)
-  computer.takeTurn(`rock`)
-  console.log(`you chose ${human.fighter}, and your opponent chose ${computer.fighter}!`)
-  chooseWinner()
-}
-
 // Pseudocode
 // Goal: To build a system that would be able to resolve a rock/paper/scissors game of indefinite size using the position of each fighter element within an array to determine which other fighter elements it will defeat or be defeated by.
 // Data: 
