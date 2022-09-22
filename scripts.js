@@ -86,8 +86,8 @@ function assignPlayers() {
 }
 
 // Instantiates a new game session from the Game class
-function beginNewGame(fightersArray) {
-  game = new Game(fightersArray)
+function beginNewGame(fightersArray, mode) {
+  game = new Game(fightersArray, mode)
 }
 
 // Players select their fighters and a turn begins
