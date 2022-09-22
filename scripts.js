@@ -37,3 +37,8 @@ function chooseFighter() {
 function checkArrayForOddness(array) {
   array.length % 2 === 0 ? true : false
 }
+
+// Finds the midpoint index position of our input array.
+function findArrayMidpoint(array) {
+  return Math.ceil(array.length / 2) - 1
+}
