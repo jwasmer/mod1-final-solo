@@ -20,7 +20,7 @@ var game = new Game();
 // Step 5: At this point, everything to the left beats the human fighter, and everything to the right is beaten by the human fighter. Should allow players to make their own array and build their own rock/paper/scissors matches dynamically!
 
 // Verifies that our input array contains an odd number of elements. Also lets me practice ternerys!
-function checkArrayForOddness(array) {
+function checkForOddness(array) {
   return array.length % 2 === 0 ? true : false
 }
 
@@ -34,7 +34,7 @@ function verifyFighter(humanFighter, array) {
 }
 
 // Finds the midpoint of our input array (based on array length, not array index position)
-function findArrayMidpoint(array) {
+function findMidpoint(array) {
   return Math.ceil(array.length / 2)
 }
 
