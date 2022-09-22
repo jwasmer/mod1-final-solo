@@ -47,3 +47,13 @@ function findFighterOffset(midpoint, array, fighter) {
     }
   }
 }
+
+// Creates a new array, unique to this turn, which places the human selected fighter at the midpoint of the array using the offset. It maintains all other relationships within the array as if the array had wrapped from the end back to the beginning.
+function centerFighterOnMidpoint(array, offset) {
+  var centeredFighters = []
+  for (var i = 0; i < fighters.length; i++) {
+    var offsetTracker = (i + offset - 1) % array.length
+    centeredFighters.push(fighters[offsetTracker])
+  }
+  return centeredFighters
+}
