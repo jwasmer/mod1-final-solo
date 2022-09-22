@@ -20,6 +20,23 @@ var game;
 // Step 4: Look up the offset value of our selected fighter in the array and shift the array (probably just make a new array) to place that fighter at its midpoint.
 // Step 5: At this point, everything to the left beats the human fighter, and everything to the right is beaten by the human fighter. Should allow players to make their own array and build their own rock/paper/scissors matches dynamically!
 
+// Instantiates Person class for human and computer
+function assignPlayers() {
+  human = new Person()
+  computer = new Person()
+}
+
+// Instantiates a new game session from the Game class
+function beginNewGame(fightersArray, mode) {
+  game = new Game(fightersArray, mode)
+}
+
+// Players select their fighters
+function assignFighters() {
+  human.takeTurn(`lizard`)
+  computer.takeTurn()
+}
+
 // Verifies that our input array contains an odd number of elements. Also lets me practice ternerys!
 function checkForOddness(array) {
   console.log(`Check for oddness complete`)
@@ -79,21 +96,4 @@ function determineWinner(computerFighter, humanFighter, centeredArray, midpoint)
   }
 }
 
-// Instantiates Person class for human and computer
-function assignPlayers() {
-  human = new Person()
-  computer = new Person()
-}
 
-// Instantiates a new game session from the Game class
-function beginNewGame(fightersArray, mode) {
-  game = new Game(fightersArray, mode)
-}
-
-// Players select their fighters and a turn begins
-function assignFighters() {
-  human.takeTurn(`lizard`)
-  computer.takeTurn()
-}
-
-// checkForOddness(hardFighters)
