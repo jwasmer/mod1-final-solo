@@ -15,7 +15,7 @@ var game = new Game();
 
 // Step 1: Determine whether the array provided contains an odd number of elements. The rock/paper/scissors logic can be applied to any odd number of fighters, but the game logic cannot resolve wins and losses correctly when an even number of fighters is provided.
 // Step 2: Find the midpoint of the provided array. This solution will resolve all conflicts by shifting the array to place the human controlled fighter at the midpoint--elements to the left will defeat the midpoint element, and elements to the right will be defeated by the midpoint element.
-// Step 3: Assign some kind of offset value to each element in the array (elements may need to be an object or array themselves for this to work). This offset will represent where our starting position in the array must be for us to consider that element a midpoint. For instance, in an array of 5 elements, the 3rd element (2nd index position) will have an offset value of 0 as it already occupies the midpoint position of the array--[[0], [1], [2], [3], [4]]. The 4th element will have an offset of 1, as our starting position in the array will need to be 1 for that element to be at the array's midpoint [[1], [2], [3], [4], [0]].
+// Step 3: Forget all that about the offset value. We don't need an offset, we just need to know positions relative to the midpoint. Adding an offset value works fine, but it doesn't seem like the most streamlined solution. If we locate our human fighter on our first pass, starting at the midpoint, we should just be able to pull it out and adjust everything relative to that.
 // Step 4: Look up the offset value of our selected fighter in the array and shift the array (probably just make a new array) to place that fighter at its midpoint.
 // Step 5: At this point, everything to the left beats the human fighter, and everything to the right is beaten by the human fighter. Should allow players to make their own array and build their own rock/paper/scissors matches dynamically!
 
@@ -33,16 +33,17 @@ function verifyFighter(humanFighter, array) {
   }
 }
 
-// Finds the midpoint index position of our input array.
+// Finds the midpoint of our input array (based on array length, not array index position)
 function findArrayMidpoint(array) {
-  return Math.ceil(array.length / 2) - 1
+  return Math.ceil(array.length / 2)
 }
 
-// Runs a standard for loop, but tracks our position within the array starting from the midpoint instead of from index position 0. The tracker will wrap once it reaches the end of the array and start at the beginning.
-function addOffsetValues(array) {
-  var midpoint = findArrayMidpoint(array)
+// Runs a standard for loop, but tracks our position within the array starting from the midpoint instead of from index position 0. The tracker will wrap once it reaches the end of the array and start at the beginning. 
+function findFighterOffset(midpoint, array, fighter) {
   for (var i = 0; i < array.length; i++) {
-    var midpointIndexTracker = (i + midpoint) % array.length
-    array[midpointIndexTracker].push(i)
+    var offsetTracker = (i + midpoint) % array.length
+    if (fighter === array[offsetTracker]) {
+      return offsetTracker
+    }
   }
 }
