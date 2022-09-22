@@ -1,5 +1,6 @@
 var classicFighters = ['rock', 'paper', 'scissors']
 var hardFighters = ['rock', 'paper', 'scissors', 'lizard', 'spock']
+var customFighters = []
 
 var human = new Person();
 var computer = new Person();
@@ -49,11 +50,25 @@ function findFighterOffset(midpoint, array, fighter) {
 }
 
 // Creates a new array, unique to this turn, which places the human selected fighter at the midpoint of the array using the offset. It maintains all other relationships within the array as if the array had wrapped from the end back to the beginning.
-function centerFighterOnMidpoint(array, offset) {
+function centerFighterOnMidpoint(array, playerOffset) {
   var centeredFighters = []
   for (var i = 0; i < fighters.length; i++) {
-    var offsetTracker = (i + offset - 1) % array.length
+    var offsetTracker = (i + playerOffset - 1) % array.length
     centeredFighters.push(fighters[offsetTracker])
   }
   return centeredFighters
+}
+
+// Checks the location of the computer fighter relative to the midpoint of the array to determine if the round is a win/loss/draw.
+function determineWinner(computerFighter, humanFighter, centeredArray, midpoint) {
+  var computerIndex = centeredArray.indexOf(computerFighter) + 1
+  if (computerIndex === midpoint) {
+    return `You both chose ${computerFighter}, it's a draw!`
+  }
+  else if (computerIndex <= midpoint) {
+    return `Your opponent's ${computerFighter} beats your ${humanFighter}! Defeat!`
+  }
+  else {
+    return `Your ${humanFighter} defeats your opponent's ${computerFighter}! Victory!`
+  }
 }
