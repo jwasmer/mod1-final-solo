@@ -21,7 +21,16 @@ var game = new Game();
 
 // Verifies that our input array contains an odd number of elements. Also lets me practice ternerys!
 function checkArrayForOddness(array) {
-  array.length % 2 === 0 ? true : false
+  return array.length % 2 === 0 ? true : false
+}
+
+// Verifies the human player's fighter is present in the provided array of fighters.
+function verifyFighter(humanFighter, array) {
+  for (var fighter of array) {
+    if (fighter === humanFighter) {
+      return true
+    }
+  }
 }
 
 // Finds the midpoint index position of our input array.
