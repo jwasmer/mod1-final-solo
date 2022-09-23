@@ -9,21 +9,23 @@ var game;
 var menuHeader = document.getElementById('header-change')
 var classicMode = document.getElementById('classic')
 var customMode = document.getElementById('custom')
+var classicIconForm = document.querySelector('.classic-icon-form')
 var classicIcons = document.querySelector('.classic-icons')
 var customIcons = document.querySelector('.custom-icons')
 
 classicMode.addEventListener('click', buildClassicPage)
 customMode.addEventListener('click', buildCustomPage)
-classicIcons.addEventListener('click', chooseClassicFighter)
+classicIconForm.addEventListener('click', chooseClassicFighter)
 
 function buildClassicPage () {
   hideGameModeSelection()
-  classicIcons.classList.remove('hidden')
+  classicIconForm.classList.remove('hidden')
 }
 
 function chooseClassicFighter (event) {
   if (event.target.nodeName === "IMG") {
     human.fighter = event.target.alt
+    event.target.classList.add('selected-fighter')
   }
 }
 
