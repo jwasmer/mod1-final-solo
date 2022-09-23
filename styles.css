@@ -1,3 +1,7 @@
+html {
+  font-family: 'Rubik', sans-serif;
+}
+
 body {
   height: 100vh;
   width: 100vw;
@@ -6,6 +10,7 @@ body {
 
 main {
   width: 70%;
+  background-color:aliceblue
 }
 
 .flex {
@@ -19,13 +24,20 @@ main {
 
 .score-bar {
   width: 15%;
+  background-color: rgb(255, 167, 104);
 }
 
 .game-selection {
   width: 20%;
   height: 20%;
+  border: 1px solid black;
   margin: 1vh;
+  background-color: rgb(250, 253, 255);
 }
+
+  .game-selection:hover {
+    background-color: rgb(85, 148, 203);
+  }
 
 .game-option {
   margin: 0;
@@ -33,4 +45,8 @@ main {
 
 .title {
   margin: 1vh;
+}
+
+.hidden {
+  display: none;
 }
