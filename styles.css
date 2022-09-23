@@ -27,16 +27,40 @@ main {
   background-color: rgb(255, 167, 104);
 }
 
-.game-selection {
+.classic-mode {
   width: 20%;
   height: 20%;
   border: 1px solid black;
   margin: 1vh;
-  background-color: rgb(250, 253, 255);
+  background-color: rgb(179, 193, 255);
 }
 
-  .game-selection:hover {
-    background-color: rgb(85, 148, 203);
+  .classic-mode:hover {
+    background-color: rgb(133, 148, 213);
+  }
+
+.hard-mode {
+  width: 20%;
+  height: 20%;
+  border: 1px solid black;
+  margin: 1vh;
+  background-color: rgb(227, 208, 153);
+}
+
+  .hard-mode:hover {
+    background-color: rgb(208, 181, 102);
+  }
+
+.custom-mode {
+  width: 20%;
+  height: 20%;
+  border: 1px solid black;
+  margin: 1vh;
+  background-color: rgb(255, 137, 137);
+}
+
+  .custom-mode:hover {
+    background-color: rgb(220, 91, 91);
   }
 
 .game-option {
