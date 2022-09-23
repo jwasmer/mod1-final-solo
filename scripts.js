@@ -17,8 +17,11 @@ classicMode.addEventListener('click', buildClassicPage)
 customMode.addEventListener('click', buildCustomPage)
 classicIconForm.addEventListener('click', chooseClassicFighter)
 
+// UI elements
 function buildClassicPage () {
   hideGameModeSelection()
+  assignPlayers()
+  beginNewGame(classicFighters, 'classic')
   classicIconForm.classList.remove('hidden')
 }
 
@@ -48,6 +51,9 @@ function hideGameModeSelection() {
 function revealGameModeSelection() {
   menuHeader.innerText = "Choose your game!"
 }
+
+
+// Game logic
 
 function assignPlayers() {
   human = new Person()
