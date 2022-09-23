@@ -8,14 +8,11 @@ var game;
 // var modeWindow = document.querySelector('main')
 var menuHeader = document.getElementById('header-change')
 var classicMode = document.getElementById('classic')
-var hardMode = document.getElementById('hard')
 var customMode = document.getElementById('custom')
 var classicIcons = document.querySelector('.classic-icons')
-var hardIcons = document.querySelector('.hard-icons')
 var customIcons = document.querySelector('.custom-icons')
 
 classicMode.addEventListener('click', buildClassicPage)
-hardMode.addEventListener('click', buildHardPage)
 customMode.addEventListener('click', buildCustomPage)
 classicIcons.addEventListener('click', chooseClassicFighter)
 
@@ -30,17 +27,12 @@ function chooseClassicFighter (event) {
   }
 }
 
-function buildHardPage() {
-  hideGameModeSelection()
-}
-
 function buildCustomPage() {
   hideGameModeSelection()
 }
 
 function hideGameModeSelection() {
   classicMode.classList.add('hidden')
-  hardMode.classList.add('hidden')
   customMode.classList.add('hidden')
   menuHeader.innerText = "Choose your fighter!"
 }
