@@ -6,6 +6,9 @@ var human;
 var computer;
 var game;
 
+var modeWindow = document.querySelector('main')
+modeWindow.addEventListener('click', chooseGameMode)
+
 function assignPlayers() {
   human = new Person()
   computer = new Person()
