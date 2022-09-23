@@ -64,11 +64,6 @@ function beginNewGame(fightersArray, mode) {
   game = new Game(fightersArray, mode)
 }
 
-function assignFighters(humanFighter) {
-  human.takeTurn(humanFighter)
-  computer.takeTurn()
-}
-
 function checkForOddness(array) {
   if (array.length % 2 !== 0) {
     game.isOdd = false
@@ -112,12 +107,12 @@ function determineWinner(computerFighter, humanFighter, midpoint) {
   }
 }
 
-assignPlayers()
-beginNewGame(classicFighters, 'classic')
-assignFighters(`lizard`)
-checkForOddness(game.fighters)
-findMidpoint(game.fighters)
-findFighterOffset(game.midpoint, game.fighters, human.fighter)
-centerFighterOnMidpoint(game.fighters, human.offset)
-findComputerIndex(game.centeredFighters, computer.fighter)
-console.log(determineWinner(computer.fighter, human.fighter, game.midpoint))
+// assignPlayers()
+// beginNewGame(classicFighters, 'classic')
+// assignFighters(`lizard`)
+// checkForOddness(game.fighters)
+// findMidpoint(game.fighters)
+// findFighterOffset(game.midpoint, game.fighters, human.fighter)
+// centerFighterOnMidpoint(game.fighters, human.offset)
+// findComputerIndex(game.centeredFighters, computer.fighter)
+// console.log(determineWinner(computer.fighter, human.fighter, game.midpoint))
