@@ -1,0 +1,36 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+main {
+  width: 70%;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-bar {
+  width: 15%;
+}
+
+.game-selection {
+  width: 20%;
+  height: 20%;
+  margin: 1vh;
+}
+
+.game-option {
+  margin: 0;
+}
+
+.title {
+  margin: 1vh;
+}
