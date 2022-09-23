@@ -63,6 +63,21 @@ main {
     background-color: rgb(220, 91, 91);
   }
 
+.classic-icons {
+  width: 5%;
+  height: 5%;
+}
+
+.hard-icons {
+  width: 5%;
+  height: 5%;
+}
+
+.custom-icons{
+  width: 5%;
+  height: 5%;
+}
+
 .game-option {
   margin: 0;
 }
