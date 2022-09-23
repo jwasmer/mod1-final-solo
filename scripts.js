@@ -10,7 +10,7 @@ var menuHeader = document.getElementById('header-change')
 var classicMode = document.getElementById('classic')
 var customMode = document.getElementById('custom')
 var classicIconForm = document.querySelector('.classic-icon-form')
-var classicIcons = document.querySelector('.classic-icons')
+var classicIcons = document.querySelectorAll('.classic-icons')
 var customIcons = document.querySelector('.custom-icons')
 
 classicMode.addEventListener('click', buildClassicPage)
@@ -23,9 +23,15 @@ function buildClassicPage () {
 }
 
 function chooseClassicFighter (event) {
-  if (event.target.nodeName === "IMG") {
+  if (human.fighter !== event.target.alt) {
+    classicIcons.forEach(icon => icon.classList.remove('selected-fighter'))
     human.fighter = event.target.alt
     event.target.classList.add('selected-fighter')
+  }
+  else if (event.target.alt === human.fighter) {
+    console.log('2')
+    human.fighter = ''
+    event.target.classList.remove('selected-fighter')
   }
 }
 
