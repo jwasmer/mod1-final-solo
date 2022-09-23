@@ -6,19 +6,37 @@ var human;
 var computer;
 var game;
 
-var modeWindow = document.querySelector('main')
-modeWindow.addEventListener('click', chooseGameMode)
+// var modeWindow = document.querySelector('main')
+var menuHeader = document.getElementById('header-change')
+var classicMode = document.getElementById('classic')
+var hardMode = document.getElementById('hard')
+var customMode = document.getElementById('custom')
 
-function chooseGameMode(event) {
-  if (event.target.classList.contains('classic-mode')) {
-    loadClassicMode()
-  }
-  else if (event.target.classList.contains('hard-mode')) {
-    loadHardMode()
-  }
-  else if (event.target.classList.contains('custom-mode')) {
-    loadCustomMode()
-  } 
+classicMode.addEventListener('click', buildClassicPage)
+hardMode.addEventListener('click', buildHardPage)
+customMode.addEventListener('click', buildCustomPage)
+
+function buildClassicPage () {
+  hideGameModeSelection()
+}
+
+function buildHardPage() {
+  hideGameModeSelection()
+}
+
+function buildCustomPage() {
+  hideGameModeSelection()
+}
+
+function hideGameModeSelection() {
+  classicMode.classList.add('hidden')
+  hardMode.classList.add('hidden')
+  customMode.classList.add('hidden')
+  menuHeader.innerText = "Choose your fighter!"
+}
+
+function revealGameModeSelection() {
+  menuHeader.innerText = "Choose your game!"
 }
 
 function assignPlayers() {

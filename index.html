@@ -12,16 +12,16 @@
     <main class="flex column">
       <header class="flex column">
         <h1 class="title"> Rock, Paper, Scissors </h1>
-        <h2 class="title"> Choose your game! </h2> 
+        <h2 class="title" id="header-change"> Choose your game! </h2> 
         <h2 class="title hidden"> Choose your fighter! </h2>
       </header>
-      <form class="flex column classic-mode">
+      <form class="flex column classic-mode" id="classic">
         <h3> CLASSIC MODE </h3>
         <p class="game-option"> rock > scissors </p>
         <p class="game-option"> paper > rock </p>
         <p class="game-option"> scissors > paper</p>
       </form>
-      <form class="flex column hard-mode">
+      <form class="flex column hard-mode" id="hard">
         <h3> HARD MODE </h3>
         <p class="game-option"> rock > scissors & lizard </p>
         <p class="game-option"> paper > rock & alien </p>
@@ -29,7 +29,7 @@
         <p class="game-option"> lizard > paper & alien </p>
         <p class="game-option"> alien > scissors & rock </p>
       </form>
-      <form class="flex column custom-mode">
+      <form class="flex column custom-mode" id="custom">
         <h3> CUSTOM MODE </h3>
         <p class="game-option"> build your own! </p>
       </form>
