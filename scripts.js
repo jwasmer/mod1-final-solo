@@ -1,10 +1,45 @@
 var classicFighters = ['rock', 'paper', 'scissors']
-var hardFighters = ['rock', 'paper', 'scissors', 'lizard', 'spock']
 var customFighters = []
 
 var human;
 var computer;
 var game;
+
+// var modeWindow = document.querySelector('main')
+var menuHeader = document.getElementById('header-change')
+var classicMode = document.getElementById('classic')
+var customMode = document.getElementById('custom')
+var classicIcons = document.querySelector('.classic-icons')
+var customIcons = document.querySelector('.custom-icons')
+
+classicMode.addEventListener('click', buildClassicPage)
+customMode.addEventListener('click', buildCustomPage)
+classicIcons.addEventListener('click', chooseClassicFighter)
+
+function buildClassicPage () {
+  hideGameModeSelection()
+  classicIcons.classList.remove('hidden')
+}
+
+function chooseClassicFighter (event) {
+  if (event.target.nodeName === "IMG") {
+    human.fighter = event.target.alt
+  }
+}
+
+function buildCustomPage() {
+  hideGameModeSelection()
+}
+
+function hideGameModeSelection() {
+  classicMode.classList.add('hidden')
+  customMode.classList.add('hidden')
+  menuHeader.innerText = "Choose your fighter!"
+}
+
+function revealGameModeSelection() {
+  menuHeader.innerText = "Choose your game!"
+}
 
 function assignPlayers() {
   human = new Person()
@@ -55,7 +90,7 @@ function determineWinner(computerFighter, humanFighter, midpoint) {
   if (computer.index === midpoint) {
     return `You both chose ${computerFighter}, it's a draw!`
   }
-  else if (computer.index < midpoint) {
+  else if (computer.index > midpoint) {
     return `Your opponent's ${computerFighter} beats your ${humanFighter}! Defeat!`
   }
   else {
@@ -64,7 +99,7 @@ function determineWinner(computerFighter, humanFighter, midpoint) {
 }
 
 assignPlayers()
-beginNewGame(hardFighters, 'hard')
+beginNewGame(classicFighters, 'classic')
 assignFighters(`lizard`)
 checkForOddness(game.fighters)
 findMidpoint(game.fighters)
