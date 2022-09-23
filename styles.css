@@ -39,18 +39,6 @@ main {
     background-color: rgb(133, 148, 213);
   }
 
-.hard-mode {
-  width: 20%;
-  height: 20%;
-  border: 1px solid black;
-  margin: 1vh;
-  background-color: rgb(227, 208, 153);
-}
-
-  .hard-mode:hover {
-    background-color: rgb(208, 181, 102);
-  }
-
 .custom-mode {
   width: 20%;
   height: 20%;
@@ -64,11 +52,6 @@ main {
   }
 
 .classic-icons {
-  width: 5%;
-  height: 5%;
-}
-
-.hard-icons {
   width: 5%;
   height: 5%;
 }
