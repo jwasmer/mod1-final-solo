@@ -9,6 +9,18 @@ var game;
 var modeWindow = document.querySelector('main')
 modeWindow.addEventListener('click', chooseGameMode)
 
+function chooseGameMode(event) {
+  if (event.target.classList.contains('classic-mode')) {
+    loadClassicMode()
+  }
+  else if (event.target.classList.contains('hard-mode')) {
+    loadHardMode()
+  }
+  else if (event.target.classList.contains('custom-mode')) {
+    loadCustomMode()
+  } 
+}
+
 function assignPlayers() {
   human = new Person()
   computer = new Person()
