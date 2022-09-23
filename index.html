@@ -4,36 +4,37 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <section>
+  <body class="flex">
+    <section class="flex column score-bar">
       <h2> Human </h2>
       <p> Wins: 0 </p>
     </section>
-    <main> <!-- Where the game/menu are, center screen-->
-      <header>
-        <h1> Rock, Paper, Scissors </h1>>
-        <h2> Choose your game! </h2> <!-- "Choose your fighter!" text change with main menu nav-->
+    <main class="flex column">
+      <header class="flex column">
+        <h1 class="title"> Rock, Paper, Scissors </h1>
+        <h2 class="title"> Choose your game! </h2> 
+        <h2 class="title hidden"> Choose your fighter! </h2>
       </header>
-      <form>
-        <div>
-          <h3> CLASSIC </h3>
-          <p> rock > scissors </p>
-          <p> paper > rock </p>
-          <p> scissors > paper</p>
-        </div>
+      <form class="flex column game-selection">
+        <h3> CLASSIC </h3>
+        <p class="game-option"> rock > scissors </p>
+        <p class="game-option"> paper > rock </p>
+        <p class="game-option"> scissors > paper</p>
       </form>
-      <form>
-        <div>
-          <h3> DIFFICULT </h3>
-          <p> rock > scissors & lizard </p>
-          <p> paper > rock & alien </p>
-          <p> scissors > paper & lizard </p>
-          <p> lizard > paper & alien </p>
-          <p> alien > scissors & rock </p>
-        </div>
+      <form class="flex column game-selection">
+        <h3> DIFFICULT </h3>
+        <p class="game-option"> rock > scissors & lizard </p>
+        <p class="game-option"> paper > rock & alien </p>
+        <p class="game-option"> scissors > paper & lizard </p>
+        <p class="game-option"> lizard > paper & alien </p>
+        <p class="game-option"> alien > scissors & rock </p>
+      </form>
+      <form class="flex column game-selection">
+        <h3> CUSTOM </h3>
+        <p class="game-option"> build your own! </p>
       </form>
     </main>
-    <section>
+    <section class="flex column score-bar">
       <h2> Computer </h2>
       <p> Wins: 0 </p>
     </section>
