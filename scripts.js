@@ -10,6 +10,7 @@ assignPlayers()
 
 var classicIconForm = document.querySelector('.classic-icon-form')
 var customIconForm = document.querySelector('.custom-icon-form')
+var customIconOptions = document.querySelector('.custom-icon-options')
 var customIconPicked = document.querySelector('.custom-icon-picked')
 var customIcons = document.querySelector('.custom-icons')
 var fightButton = document.querySelector('.fight-button')
@@ -17,7 +18,6 @@ var fighterLabel = document.querySelector('.fighter-label')
 var instructionHeader = document.querySelector('.instruction')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
-var draggableCustomIcons = document.querySelectorAll('[data-draggable="true"]')
 
 var classicMode = document.getElementById('classic')
 var computerScore = document.getElementById('computer-score')
@@ -30,7 +30,9 @@ classicMode.addEventListener('click', buildClassicPage)
 customMode.addEventListener('click', buildCustomPage)
 fightButton.addEventListener('click', playClassicRound)
 customIconPicked.addEventListener('dragover', (event) => {event.preventDefault()})
-customIconPicked.addEventListener('drop', (event) => {dragFighter(event)})
+customIconPicked.addEventListener('drop', (event) => {dropFighter(event)})
+customIconOptions.addEventListener('dragover', (event) => {event.preventDefault()})
+customIconOptions.addEventListener('drop', (event) => {dropFighter(event)})
 customIconForm.addEventListener('dragstart', (event) => makeDraggable(event))
 
 // ***** UI *****
@@ -40,11 +42,18 @@ function makeDraggable(event) {
   }
 }
 
-function dragFighter(event) {
+function dropFighter(event) {
   event.preventDefault()
-  if (event.target === customIconPicked) {
+  if (event.target === fighterDragged) {
+    return
+  }
+  else if (event.target === customIconPicked || event.target === customIconOptions) {
     fighterDragged.parentNode.removeChild(fighterDragged)
     event.target.appendChild(fighterDragged)
+  }
+  else if (event.target.dataset.draggable === "true") {
+    fighterDragged.parentNode.removeChild(fighterDragged)
+    event.target.parentNode.appendChild(fighterDragged)
   }
 }
 
