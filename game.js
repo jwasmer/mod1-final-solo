@@ -24,5 +24,8 @@ class Game {
       game.centeredFighters.push(array[offset])
     }
   }
+  findComputerIndex(centeredArray, fighter) {
+    computer.index = centeredArray.indexOf(fighter) + 1
+  }
 }
 

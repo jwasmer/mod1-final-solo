@@ -81,10 +81,6 @@ function checkForOddness(array) {
   }
 }
 
-function findComputerIndex(centeredArray, fighter) {
-  computer.index = centeredArray.indexOf(fighter) + 1
-}
-
 function determineWinner(computerFighter, humanFighter, midpoint) {
   if (computer.index === midpoint) {
     console.log(`You both chose ${computerFighter}, it's a draw!`)
