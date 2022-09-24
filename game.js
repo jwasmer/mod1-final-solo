@@ -17,6 +17,12 @@ class Game {
       }
     }
   }
-  
+  centerFighterOnMidpoint(array, humanOffset) {
+    game.centeredFighters = []
+    for (var i = 0; i < array.length; i++) {
+      var offset = (i + humanOffset) % array.length
+      game.centeredFighters.push(array[offset])
+    }
+  }
 }
 

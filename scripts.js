@@ -81,15 +81,6 @@ function checkForOddness(array) {
   }
 }
 
-function centerFighterOnMidpoint(array, humanOffset) {
-  game.centeredFighters = []
-  for (var i = 0; i < array.length; i++) {
-    var offset = (i + humanOffset) % array.length
-    game.centeredFighters.push(array[offset])
-  }
-  console.log(game.centeredFighters)
-}
-
 function findComputerIndex(centeredArray, fighter) {
   computer.index = centeredArray.indexOf(fighter) + 1
 }
