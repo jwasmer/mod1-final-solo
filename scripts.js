@@ -1,9 +1,9 @@
 var classicFighters = ['rock', 'paper', 'scissors']
 var customFighters = []
 
-var human;
 var computer;
 var game;
+var human;
 
 var classicIconForm = document.querySelector('.classic-icon-form')
 var customIcons = document.querySelector('.custom-icons')
@@ -28,7 +28,7 @@ fightButton.addEventListener('click', playClassicRound)
 function buildClassicPage () {
   hideGameModeSelection()
   assignPlayers()
-  beginNewGame(classicFighters, 'classic')
+  beginNewGame(classicFighters)
   classicIconForm.classList.remove('hidden')
   gameControls.classList.remove('hidden')
 }
