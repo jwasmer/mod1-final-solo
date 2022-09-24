@@ -58,6 +58,9 @@ function chooseClassicFighter (event) {
 
 function buildCustomPage() {
   hideGameModeSelection()
+  beginNewGame(customFighters)
+  customIconForm.classList.remove('hidden')
+  gameControls.classList.remove('hidden')
 }
 
 // function revealGameModeSelection() {
