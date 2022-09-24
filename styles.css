@@ -56,17 +56,19 @@ main {
 
 .custom-icon-picked {
   display: grid;
-  height: 7em;
-  width: 7em;
+  height: 14vw;
+  width: 25vw;
   border: 2px solid black;
 }
 
 .custom-icon-options {
   display: grid;
-  height: 13vw;
-  width: 40vw;
-  grid-template-columns: repeat(10, auto);
+  height: 14vw;
+  width: 25vw;
+  grid-template-columns: repeat(5, auto);
   border: 2px solid black;
+  overflow-y: scroll;
+  scrollbar-width: thin;
 }
 
 .custom-icons{
@@ -74,6 +76,7 @@ main {
   grid-row: auto;
   height: 4vw;
   width: 4vw;
+  margin: 5px;
 }
 
 .custom-mode {
@@ -119,8 +122,8 @@ main {
 }
 
 .instruction {
-  margin-top: 2vh;
-  margin-bottom: 4vh;
+  margin-top: 1vh;
+  margin-bottom: 3vh;
   font-size: 3em;
 }
 
@@ -143,7 +146,7 @@ main {
 }
 
 .title {
-  margin-top: 5vh;
+  margin-top: 2vh;
   margin-bottom: 0vh;
   font-size: 6em;
 }
