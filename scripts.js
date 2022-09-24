@@ -8,7 +8,7 @@ var human;
 var classicIconForm = document.querySelector('.classic-icon-form')
 var customIcons = document.querySelector('.custom-icons')
 var fightButton = document.querySelector('.fight-button')
-var fighterLabel = document.querySelector('.selected-fighter-text')
+var fighterLabel = document.querySelector('.fighter-label')
 var instructionHeader = document.querySelector('.instruction')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
