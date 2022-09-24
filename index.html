@@ -7,7 +7,7 @@
   <body class="flex">
     <section class="flex column score-bar">
       <h2 class="score-title"> Human </h2>
-      <p class="score"> Wins: 0 </p>
+      <p class="score" id="human-score"> Wins: 0 </p>
     </section>
     <main class="flex column">
       <header class="flex column">
@@ -23,6 +23,9 @@
       <form class="flex column hidden" id="game-controls" >
         <p class="selected-fighter-text"></p>
         <button class="fight-button">FIGHT!</button>
+        <div>
+          <button>Main Menu</button>
+        </div>
       </form>
       <form class="flex column classic-mode" id="classic">
         <h3> CLASSIC MODE </h3>
@@ -37,7 +40,7 @@
     </main>
     <section class="flex column score-bar">
       <h2 class="score-title"> Computer </h2>
-      <p class="score"> Wins: 0 </p>
+      <p class="score" id="computer-score"> Wins: 0 </p>
     </section>
     <script type="text/javascript" src="person.js"></script>
     <script type="text/javascript" src="game.js"></script>

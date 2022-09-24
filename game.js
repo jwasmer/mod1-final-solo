@@ -7,9 +7,5 @@ class Game {
     this.midpoint;
     this.offset;
   }
-  assignFighters(humanFighter) {
-    human.takeTurn(humanFighter)
-    computer.takeTurn()
-  }
 }
 

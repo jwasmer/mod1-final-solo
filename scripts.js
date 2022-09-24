@@ -12,10 +12,17 @@ var customMode = document.getElementById('custom')
 var classicIconForm = document.querySelector('.classic-icon-form')
 var classicIcons = document.querySelectorAll('.classic-icons')
 var customIcons = document.querySelector('.custom-icons')
+var gameControls = document.getElementById('game-controls')
+var fighterLabel = document.querySelector('.selected-fighter-text')
+var fightButton = document.querySelector('.fight-button')
+var humanScore = document.getElementById('human-score')
+var computerScore = document.getElementById('computer-score')
+
 
 classicMode.addEventListener('click', buildClassicPage)
 customMode.addEventListener('click', buildCustomPage)
 classicIconForm.addEventListener('click', chooseClassicFighter)
+fightButton.addEventListener('click', playClassicRound)
 
 // UI elements
 function buildClassicPage () {
@@ -23,18 +30,23 @@ function buildClassicPage () {
   assignPlayers()
   beginNewGame(classicFighters, 'classic')
   classicIconForm.classList.remove('hidden')
+  gameControls.classList.remove('hidden')
 }
 
 function chooseClassicFighter (event) {
   if (human.fighter !== event.target.alt) {
     classicIcons.forEach(icon => icon.classList.remove('selected-fighter'))
     human.fighter = event.target.alt
+    fighterLabel.innerText = `${human.fighter.toUpperCase()}!`
     event.target.classList.add('selected-fighter')
+    
   }
   else if (event.target.alt === human.fighter) {
     console.log('2')
-    human.fighter = ''
+    human.takeTurn('')
+    fighterLabel.innerText = ''
     event.target.classList.remove('selected-fighter')
+
   }
 }
 
@@ -84,6 +96,7 @@ function findFighterOffset(midpoint, array, fighter) {
 }
 
 function centerFighterOnMidpoint(array, humanOffset) {
+  game.centeredFighters = []
   for (var i = 0; i < array.length; i++) {
     var offset = (i + humanOffset) % array.length
     game.centeredFighters.push(array[offset])
@@ -97,14 +110,28 @@ function findComputerIndex(centeredArray, fighter) {
 
 function determineWinner(computerFighter, humanFighter, midpoint) {
   if (computer.index === midpoint) {
-    return `You both chose ${computerFighter}, it's a draw!`
+    console.log(`You both chose ${computerFighter}, it's a draw!`)
   }
   else if (computer.index > midpoint) {
-    return `Your opponent's ${computerFighter} beats your ${humanFighter}! Defeat!`
+    console.log(`Your opponent's ${computerFighter} beats your ${humanFighter}! Defeat!`)
+    computer.wins++
+    computerScore.innerText = `Wins: ${computer.wins}`
   }
   else {
-    return `Your ${humanFighter} defeats your opponent's ${computerFighter}! Victory!`
+    console.log(`Your ${humanFighter} defeats your opponent's ${computerFighter}! Victory!`)
+    human.wins++
+    humanScore.innerText = `Wins: ${human.wins}`
   }
+}
+
+function playClassicRound() {
+  event.preventDefault();
+  computer.takeTurn()
+  findMidpoint(game.fighters)
+  findFighterOffset(game.midpoint, game.fighters, human.fighter)
+  centerFighterOnMidpoint(game.fighters, human.offset)
+  findComputerIndex(game.centeredFighters, computer.fighter)
+  determineWinner(computer.fighter, human.fighter, game.midpoint)
 }
 
 // assignPlayers()
