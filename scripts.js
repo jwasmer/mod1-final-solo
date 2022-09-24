@@ -5,7 +5,10 @@ var computer;
 var game;
 var human;
 
+assignPlayers()
+
 var classicIconForm = document.querySelector('.classic-icon-form')
+var customIconForm = document.querySelector('.custom-icon-form')
 var customIcons = document.querySelector('.custom-icons')
 var fightButton = document.querySelector('.fight-button')
 var fighterLabel = document.querySelector('.fighter-label')
@@ -33,7 +36,6 @@ function hideGameModeSelection() {
 
 function buildClassicPage () {
   hideGameModeSelection()
-  assignPlayers()
   beginNewGame(classicFighters)
   classicIconForm.classList.remove('hidden')
   gameControls.classList.remove('hidden')
@@ -56,6 +58,9 @@ function chooseClassicFighter (event) {
 
 function buildCustomPage() {
   hideGameModeSelection()
+  beginNewGame(customFighters)
+  customIconForm.classList.remove('hidden')
+  gameControls.classList.remove('hidden')
 }
 
 // function revealGameModeSelection() {
