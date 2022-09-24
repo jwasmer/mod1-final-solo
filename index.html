@@ -2,23 +2,30 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik" rel="stylesheet">
   </head>
   <body class="flex">
     <section class="flex column score-bar">
-      <h2> Human </h2>
-      <p> Wins: 0 </p>
+      <h2 class="score-title"> Human </h2>
+      <p class="score" id="human-score"> Wins: 0 </p>
     </section>
     <main class="flex column">
       <header class="flex column">
         <h1 class="title"> Rock, Paper, Scissors </h1>
-        <h2 class="title" id="header-change"> Choose your game! </h2> 
-        <h2 class="title hidden"> Choose your fighter! </h2>
+        <h2 class="instruction" id="header-change"> Choose your game! </h2> 
+        <h2 class="instruction hidden"> Choose your fighter! </h2>
       </header>
-      <form class="flex classic-icons hidden">
-        <img src="assets/paper-roll.png" alt="paper">
-        <img src="assets/rocks.png" alt="rock">
-        <img src="assets/scissor.png" alt="scissors">
+      <form class="flex classic-icon-form hidden">
+        <img class="classic-icons" src="assets/paper-roll.png" alt="paper">
+        <img class="classic-icons" src="assets/rocks.png" alt="rock">
+        <img class="classic-icons" src="assets/scissor.png" alt="scissors">
+      </form>
+      <form class="flex column hidden" id="game-controls" >
+        <p class="selected-fighter-text"></p>
+        <button class="fight-button">FIGHT!</button>
+        <div>
+          <button>Main Menu</button>
+        </div>
       </form>
       <form class="flex column classic-mode" id="classic">
         <h3> CLASSIC MODE </h3>
@@ -32,8 +39,8 @@
       </form>
     </main>
     <section class="flex column score-bar">
-      <h2> Computer </h2>
-      <p> Wins: 0 </p>
+      <h2 class="score-title"> Computer </h2>
+      <p class="score" id="computer-score"> Wins: 0 </p>
     </section>
     <script type="text/javascript" src="person.js"></script>
     <script type="text/javascript" src="game.js"></script>

@@ -51,10 +51,25 @@ main {
     background-color: rgb(220, 91, 91);
   }
 
-.classic-icons {
-  width: 5%;
-  height: 5%;
+.classic-icon-form {
+  justify-content: center;
+  margin: 5vw;
+  height: 11vw;
 }
+
+.classic-icons {
+  height: 10vw;
+  width: 10vw;
+  cursor: pointer;
+  transition-duration: 200ms;
+  margin: 1vw;
+}
+
+  .classic-icons:hover {
+    height: 11vw;
+    width: 11vw;
+    transition-duration: 200ms;
+  }
 
 .custom-icons{
   width: 5%;
@@ -66,9 +81,48 @@ main {
 }
 
 .title {
-  margin: 1vh;
+  margin-top: 5vh;
+  margin-bottom: 0vh;
+  font-size: 6em;
+}
+
+.instruction {
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+  font-size: 3em;
 }
 
 .hidden {
   display: none;
+}
+
+.selected-fighter {
+  height: 11vw;
+  width: 11vw;
+}
+
+.selected-fighter-text {
+  font-size: 1.5em;
+  height: 1.5em;
+  margin: 0px;
+}
+
+.score-title {
+  font-size: 2.5em;
+}
+
+.score {
+  font-size: 1.5em;
+}
+
+.game-controls-hidden {
+  display: none;
+}
+
+.fight-button {
+  height: 5vw;
+  width: 10vw;
+  background-color: lightcoral;
+  font-size: 2em;
+  color: white;
 }
