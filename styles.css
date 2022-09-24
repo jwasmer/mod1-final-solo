@@ -1,55 +1,17 @@
-html {
-  font-family: 'Rubik', sans-serif;
-}
-
 body {
   height: 100vh;
   width: 100vw;
   justify-content: space-between;
 }
 
+html {
+  font-family: 'Rubik', sans-serif;
+}
+
 main {
   width: 70%;
   background-color:aliceblue
 }
-
-.flex {
-  display: flex;
-}
-
-.column {
-  flex-direction: column;
-  align-items: center;
-}
-
-.score-bar {
-  width: 15%;
-  background-color: rgb(255, 167, 104);
-}
-
-.classic-mode {
-  width: 20%;
-  height: 20%;
-  border: 1px solid black;
-  margin: 1vh;
-  background-color: rgb(179, 193, 255);
-}
-
-  .classic-mode:hover {
-    background-color: rgb(133, 148, 213);
-  }
-
-.custom-mode {
-  width: 20%;
-  height: 20%;
-  border: 1px solid black;
-  margin: 1vh;
-  background-color: rgb(255, 137, 137);
-}
-
-  .custom-mode:hover {
-    background-color: rgb(220, 91, 91);
-  }
 
 .classic-icon-form {
   justify-content: center;
@@ -71,19 +33,68 @@ main {
     transition-duration: 200ms;
   }
 
+.classic-mode {
+  width: 20%;
+  height: 20%;
+  border: 1px solid black;
+  margin: 1vh;
+  background-color: rgb(179, 193, 255);
+}
+
+  .classic-mode:hover {
+    background-color: rgb(133, 148, 213);
+  }
+
+.column {
+  flex-direction: column;
+  align-items: center;
+}
+
 .custom-icons{
   width: 5%;
   height: 5%;
+}
+
+.custom-mode {
+  width: 20%;
+  height: 20%;
+  border: 1px solid black;
+  margin: 1vh;
+  background-color: rgb(255, 137, 137);
+}
+
+  .custom-mode:hover {
+    background-color: rgb(220, 91, 91);
+  }
+
+.fight-button {
+  height: 5vw;
+  width: 10vw;
+  background-color: lightcoral;
+  font-size: 2em;
+  color: white;
+}
+
+.fighter-label {
+  font-size: 1.5em;
+  height: 1.5em;
+  margin: 0px;
+}
+
+.flex {
+  display: flex;
+}
+
+.game-controls-hidden {
+  display: none;
 }
 
 .game-option {
   margin: 0;
 }
 
-.title {
-  margin-top: 5vh;
-  margin-bottom: 0vh;
-  font-size: 6em;
+.hidden {
+  display: none;
 }
 
 .instruction {
@@ -92,8 +103,17 @@ main {
   font-size: 3em;
 }
 
-.hidden {
-  display: none;
+.score {
+  font-size: 1.5em;
+}
+
+.score-bar {
+  width: 15%;
+  background-color: rgb(255, 167, 104);
+}
+
+.score-title {
+  font-size: 2.5em;
 }
 
 .selected-fighter {
@@ -101,28 +121,8 @@ main {
   width: 11vw;
 }
 
-.selected-fighter-text {
-  font-size: 1.5em;
-  height: 1.5em;
-  margin: 0px;
-}
-
-.score-title {
-  font-size: 2.5em;
-}
-
-.score {
-  font-size: 1.5em;
-}
-
-.game-controls-hidden {
-  display: none;
-}
-
-.fight-button {
-  height: 5vw;
-  width: 10vw;
-  background-color: lightcoral;
-  font-size: 2em;
-  color: white;
+.title {
+  margin-top: 5vh;
+  margin-bottom: 0vh;
+  font-size: 6em;
 }

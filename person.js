@@ -3,7 +3,6 @@ class Person {
     this.fighter = ''
     this.offset = 0
     this.index = 0
-    // Win/Loss/Draw
     this.wins = 0
   }
   takeTurn(fighter) {
