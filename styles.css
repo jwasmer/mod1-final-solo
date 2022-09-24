@@ -50,9 +50,29 @@ main {
   align-items: center;
 }
 
+.custom-icon-form {
+  border: 2px solid black;
+}
+
+.custom-icon-picked {
+  display: grid;
+  height: 7em;
+  width: 7em;
+  border: 2px solid black;
+}
+
+.custom-icon-options {
+  display: grid;
+  height: 7em;
+  width: 7em;
+  border: 2px solid black;
+}
+
 .custom-icons{
-  width: 5%;
-  height: 5%;
+  grid-column: auto;
+  grid-row: auto;
+  height: 1em;
+  width: 1em;
 }
 
 .custom-mode {
