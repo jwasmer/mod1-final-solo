@@ -6,5 +6,8 @@ class Game {
     this.midpoint;
     this.offset;
   }
+  findMidpoint(array) {
+    game.midpoint = Math.ceil(array.length / 2)
+  }
 }
 

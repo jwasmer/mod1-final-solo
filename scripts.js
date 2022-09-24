@@ -59,9 +59,9 @@ function buildCustomPage() {
   hideGameModeSelection()
 }
 
-function revealGameModeSelection() {
-  instructionHeader.innerText = "Choose your game!"
-}
+// function revealGameModeSelection() {
+//   instructionHeader.innerText = "Choose your game!"
+// }
 
 
 // Game logic
@@ -81,9 +81,7 @@ function checkForOddness(array) {
   }
 }
 
-function findMidpoint(array) {
-  game.midpoint = Math.ceil(array.length / 2)
-}
+
 
 function findFighterOffset(midpoint, array, fighter) {
   for (var i = 0; i < array.length; i++) {
@@ -126,7 +124,7 @@ function determineWinner(computerFighter, humanFighter, midpoint) {
 function playClassicRound() {
   event.preventDefault();
   computer.takeTurn()
-  findMidpoint(game.fighters)
+  game.findMidpoint(game.fighters)
   findFighterOffset(game.midpoint, game.fighters, human.fighter)
   centerFighterOnMidpoint(game.fighters, human.offset)
   findComputerIndex(game.centeredFighters, computer.fighter)
