@@ -63,7 +63,6 @@ function buildCustomPage() {
 //   instructionHeader.innerText = "Choose your game!"
 // }
 
-
 // Game logic
 
 function assignPlayers() {
@@ -80,17 +79,7 @@ function playClassicRound() {
   computer.takeTurn()
   game.findMidpoint(game.fighters)
   game.findFighterOffset(game.midpoint, game.fighters, human.fighter)
-  centerFighterOnMidpoint(game.fighters, human.offset)
-  findComputerIndex(game.centeredFighters, computer.fighter)
-  determineWinner(computer.fighter, human.fighter, game.midpoint)
+  game.centerFighterOnMidpoint(game.fighters, human.offset)
+  game.findComputerIndex(game.centeredFighters, computer.fighter)
+  game.determineWinner(computer.fighter, human.fighter, game.midpoint)
 }
-
-// assignPlayers()
-// beginNewGame(classicFighters, 'classic')
-// assignFighters(`lizard`)
-// checkForOddness(game.fighters)
-// findMidpoint(game.fighters)
-// findFighterOffset(game.midpoint, game.fighters, human.fighter)
-// centerFighterOnMidpoint(game.fighters, human.offset)
-// findComputerIndex(game.centeredFighters, computer.fighter)
-// console.log(determineWinner(computer.fighter, human.fighter, game.midpoint))
