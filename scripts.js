@@ -81,22 +81,6 @@ function checkForOddness(array) {
   }
 }
 
-function determineWinner(computerFighter, humanFighter, midpoint) {
-  if (computer.index === midpoint) {
-    console.log(`You both chose ${computerFighter}, it's a draw!`)
-  }
-  else if (computer.index > midpoint) {
-    console.log(`Your opponent's ${computerFighter} beats your ${humanFighter}! Defeat!`)
-    computer.wins++
-    computerScore.innerText = `Wins: ${computer.wins}`
-  }
-  else {
-    console.log(`Your ${humanFighter} defeats your opponent's ${computerFighter}! Victory!`)
-    human.wins++
-    humanScore.innerText = `Wins: ${human.wins}`
-  }
-}
-
 function playClassicRound() {
   event.preventDefault();
   computer.takeTurn()
