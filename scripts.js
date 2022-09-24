@@ -48,7 +48,6 @@ function chooseClassicFighter (event) {
     
   }
   else if (event.target.alt === human.fighter) {
-    console.log('2')
     human.takeTurn('')
     fighterLabel.innerText = ''
     event.target.classList.remove('selected-fighter')
