@@ -63,16 +63,17 @@ main {
 
 .custom-icon-options {
   display: grid;
-  height: 7em;
-  width: 7em;
+  height: 13vw;
+  width: 40vw;
+  grid-template-columns: repeat(10, auto);
   border: 2px solid black;
 }
 
 .custom-icons{
   grid-column: auto;
   grid-row: auto;
-  height: 1em;
-  width: 1em;
+  height: 4vw;
+  width: 4vw;
 }
 
 .custom-mode {
