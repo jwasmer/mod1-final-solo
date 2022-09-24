@@ -4,17 +4,20 @@ var customFighters = []
 var computer;
 var game;
 var human;
+var fighterDragged;
 
 assignPlayers()
 
 var classicIconForm = document.querySelector('.classic-icon-form')
 var customIconForm = document.querySelector('.custom-icon-form')
+var customIconPicked = document.querySelector('.custom-icon-picked')
 var customIcons = document.querySelector('.custom-icons')
 var fightButton = document.querySelector('.fight-button')
 var fighterLabel = document.querySelector('.fighter-label')
 var instructionHeader = document.querySelector('.instruction')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
+var draggableCustomIcons = document.querySelectorAll('[data-draggable="true"]')
 
 var classicMode = document.getElementById('classic')
 var computerScore = document.getElementById('computer-score')
@@ -26,8 +29,25 @@ classicIconForm.addEventListener('click', chooseClassicFighter)
 classicMode.addEventListener('click', buildClassicPage)
 customMode.addEventListener('click', buildCustomPage)
 fightButton.addEventListener('click', playClassicRound)
+customIconPicked.addEventListener('dragover', (event) => {event.preventDefault()})
+customIconPicked.addEventListener('drop', (event) => {dragFighter(event)})
+customIconForm.addEventListener('dragstart', (event) => makeDraggable(event))
 
 // ***** UI *****
+function makeDraggable(event) {
+  if (event.target.dataset.draggable === "true") {
+    fighterDragged = event.target
+  }
+}
+
+function dragFighter(event) {
+  event.preventDefault()
+  if (event.target === customIconPicked) {
+    fighterDragged.parentNode.removeChild(fighterDragged)
+    event.target.appendChild(fighterDragged)
+  }
+}
+
 function hideGameModeSelection() {
   classicMode.classList.add('hidden')
   customMode.classList.add('hidden')
@@ -47,7 +67,6 @@ function chooseClassicFighter (event) {
     human.fighter = event.target.alt
     fighterLabel.innerText = `${human.fighter.toUpperCase()}!`
     event.target.classList.add('selected-fighter')
-    
   }
   else if (event.target.alt === human.fighter) {
     human.takeTurn('')
