@@ -8,6 +8,7 @@ var human;
 assignPlayers()
 
 var classicIconForm = document.querySelector('.classic-icon-form')
+var customIconForm = document.querySelector('.custom-icon-form')
 var customIcons = document.querySelector('.custom-icons')
 var fightButton = document.querySelector('.fight-button')
 var fighterLabel = document.querySelector('.fighter-label')
@@ -57,7 +58,6 @@ function chooseClassicFighter (event) {
 
 function buildCustomPage() {
   hideGameModeSelection()
-  assign
 }
 
 // function revealGameModeSelection() {
