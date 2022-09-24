@@ -5,22 +5,23 @@ var human;
 var computer;
 var game;
 
-var instructionHeader = document.querySelector('.instruction')
-var classicMode = document.getElementById('classic')
-var customMode = document.getElementById('custom')
 var classicIconForm = document.querySelector('.classic-icon-form')
-var classicIcons = document.querySelectorAll('.classic-icons')
 var customIcons = document.querySelector('.custom-icons')
-var gameControls = document.getElementById('game-controls')
-var fighterLabel = document.querySelector('.selected-fighter-text')
 var fightButton = document.querySelector('.fight-button')
-var humanScore = document.getElementById('human-score')
+var fighterLabel = document.querySelector('.selected-fighter-text')
+var instructionHeader = document.querySelector('.instruction')
+
+var classicIcons = document.querySelectorAll('.classic-icons')
+
+var classicMode = document.getElementById('classic')
 var computerScore = document.getElementById('computer-score')
+var customMode = document.getElementById('custom')
+var gameControls = document.getElementById('game-controls')
+var humanScore = document.getElementById('human-score')
 
-
+classicIconForm.addEventListener('click', chooseClassicFighter)
 classicMode.addEventListener('click', buildClassicPage)
 customMode.addEventListener('click', buildCustomPage)
-classicIconForm.addEventListener('click', chooseClassicFighter)
 fightButton.addEventListener('click', playClassicRound)
 
 // UI elements
