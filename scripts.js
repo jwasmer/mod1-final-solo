@@ -81,17 +81,6 @@ function checkForOddness(array) {
   }
 }
 
-
-
-function findFighterOffset(midpoint, array, fighter) {
-  for (var i = 0; i < array.length; i++) {
-    var offset = (i + midpoint - 1) % array.length
-    if (fighter === array[offset]) {
-      human.offset = i
-    }
-  }
-}
-
 function centerFighterOnMidpoint(array, humanOffset) {
   game.centeredFighters = []
   for (var i = 0; i < array.length; i++) {
@@ -125,7 +114,7 @@ function playClassicRound() {
   event.preventDefault();
   computer.takeTurn()
   game.findMidpoint(game.fighters)
-  findFighterOffset(game.midpoint, game.fighters, human.fighter)
+  game.findFighterOffset(game.midpoint, game.fighters, human.fighter)
   centerFighterOnMidpoint(game.fighters, human.offset)
   findComputerIndex(game.centeredFighters, computer.fighter)
   determineWinner(computer.fighter, human.fighter, game.midpoint)
