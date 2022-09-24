@@ -5,8 +5,7 @@ var human;
 var computer;
 var game;
 
-// var modeWindow = document.querySelector('main')
-var menuHeader = document.getElementById('header-change')
+var instructionHeader = document.querySelector('.instruction')
 var classicMode = document.getElementById('classic')
 var customMode = document.getElementById('custom')
 var classicIconForm = document.querySelector('.classic-icon-form')
@@ -46,7 +45,6 @@ function chooseClassicFighter (event) {
     human.takeTurn('')
     fighterLabel.innerText = ''
     event.target.classList.remove('selected-fighter')
-
   }
 }
 
@@ -57,11 +55,11 @@ function buildCustomPage() {
 function hideGameModeSelection() {
   classicMode.classList.add('hidden')
   customMode.classList.add('hidden')
-  menuHeader.innerText = "Choose your fighter!"
+  instructionHeader.innerText = "Choose your fighter!"
 }
 
 function revealGameModeSelection() {
-  menuHeader.innerText = "Choose your game!"
+  instructionHeader.innerText = "Choose your game!"
 }
 
 
