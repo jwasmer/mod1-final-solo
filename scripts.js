@@ -24,7 +24,13 @@ classicMode.addEventListener('click', buildClassicPage)
 customMode.addEventListener('click', buildCustomPage)
 fightButton.addEventListener('click', playClassicRound)
 
-// UI elements
+// ***** UI *****
+function hideGameModeSelection() {
+  classicMode.classList.add('hidden')
+  customMode.classList.add('hidden')
+  instructionHeader.innerText = "Choose your fighter!"
+}
+
 function buildClassicPage () {
   hideGameModeSelection()
   assignPlayers()
@@ -51,12 +57,6 @@ function chooseClassicFighter (event) {
 
 function buildCustomPage() {
   hideGameModeSelection()
-}
-
-function hideGameModeSelection() {
-  classicMode.classList.add('hidden')
-  customMode.classList.add('hidden')
-  instructionHeader.innerText = "Choose your fighter!"
 }
 
 function revealGameModeSelection() {
