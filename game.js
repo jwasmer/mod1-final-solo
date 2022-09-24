@@ -7,6 +7,12 @@ class Game {
     this.offset;
   }
 
+  checkForOddness(array) {
+    if (array.length % 2 !== 0) {
+      game.isOdd = false
+    }
+  }
+
   findMidpoint(array) {
     game.midpoint = Math.ceil(array.length / 2)
   }
@@ -31,7 +37,7 @@ class Game {
   findComputerIndex(centeredArray, fighter) {
     computer.index = centeredArray.indexOf(fighter) + 1
   }
-  
+
   determineWinner(computerFighter, humanFighter, midpoint) {
     if (computer.index === midpoint) {
       console.log(`You both chose ${computerFighter}, it's a draw!`)

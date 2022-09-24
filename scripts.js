@@ -75,12 +75,6 @@ function beginNewGame(fightersArray, mode) {
   game = new Game(fightersArray, mode)
 }
 
-function checkForOddness(array) {
-  if (array.length % 2 !== 0) {
-    game.isOdd = false
-  }
-}
-
 function playClassicRound() {
   event.preventDefault();
   computer.takeTurn()
