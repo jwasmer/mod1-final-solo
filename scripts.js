@@ -20,7 +20,9 @@ var customIcons = document.querySelector('.custom-icons')
 var fightButton = document.querySelector('.fight-button')
 var fighterLabel = document.querySelector('.fighter-label')
 var instruction1 = document.querySelector('.instruction-1')
+var instruction2 = document.querySelector('.instruction-2')
 var customInstructions = document.querySelector('.custom-instructions')
+var getStartedButton = document.querySelector('.get-started-button')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
 
@@ -39,8 +41,21 @@ customIconPicked.addEventListener('drop', (event) => {dropFighter(event)})
 customIconOptions.addEventListener('dragover', (event) => {event.preventDefault()})
 customIconOptions.addEventListener('drop', (event) => {dropFighter(event)})
 main.addEventListener('dragstart', (event) => makeDraggable(event))
+getStartedButton.addEventListener('click', getStarted)
+
 
 // ***** UI *****
+function getStarted(event) {
+  event.preventDefault()
+  // getStartedButton.style.opacity = 0
+  customInstructions.classList.add('hidden')
+  instruction1.innerText = "Drag from here..."
+  customIconOptions.classList.remove('hidden')
+  instruction2.classList.remove('hidden')
+  instruction2.innerText = "... down to here!"
+  customIconPicked.classList.remove('hidden')
+}
+
 function makeDraggable(event) {
   if (event.target.dataset.draggable === "true") {
     fighterDragged = event.target

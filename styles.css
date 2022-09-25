@@ -87,11 +87,11 @@ main {
   border: 2px solid black;
   border-radius: 1em;
   text-align: center;
-  font-size: larger;
+  font-size: x-large;
   padding-left: 1em;
   padding-right: 1em;
   margin-bottom: 2em;
-  margin-top: 10vh;
+  margin-top: 6vh;
 }
 
 .custom-instructions {
@@ -107,6 +107,7 @@ main {
   color: white;
   font-family: inherit;
   border-radius: 0.5em;
+  /* transition: opacity 1000ms; */
 }
 
 .custom-mode {
@@ -153,7 +154,13 @@ main {
 
 .instruction-1 {
   margin-top: 1vh;
-  margin-bottom: 3vh;
+  margin-bottom: 1vh;
+  font-size: 3em;
+}
+
+.instruction-2 {
+  margin-top: 3vh;
+  margin-bottom: 1vh;
   font-size: 3em;
 }
 
