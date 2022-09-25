@@ -1,3 +1,6 @@
+//TODO:
+//Make sure adjusting the view window size doesn't ruin the custom icons grid! 
+
 var classicFighters = ['rock', 'paper', 'scissors']
 var customFighters = []
 
@@ -17,6 +20,7 @@ var customIcons = document.querySelector('.custom-icons')
 var fightButton = document.querySelector('.fight-button')
 var fighterLabel = document.querySelector('.fighter-label')
 var instruction1 = document.querySelector('.instruction-1')
+var customInstructions = document.querySelector('.custom-instructions')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
 
@@ -62,7 +66,6 @@ function dropFighter(event) {
 function hideGameModeSelection() {
   classicMode.classList.add('hidden')
   customMode.classList.add('hidden')
-  instruction1.innerText = "Choose your fighter!"
 }
 
 function buildClassicPage () {
@@ -70,6 +73,7 @@ function buildClassicPage () {
   beginNewGame(classicFighters)
   classicIconForm.classList.remove('hidden')
   gameControls.classList.remove('hidden')
+  instruction1.innerText = "Choose your fighter!"
 }
 
 function chooseClassicFighter (event) {
@@ -89,9 +93,11 @@ function chooseClassicFighter (event) {
 function buildCustomPage() {
   hideGameModeSelection()
   beginNewGame(customFighters)
-  customIconOptions.classList.remove('hidden')
-  customIconPicked.classList.remove('hidden')
-  gameControls.classList.remove('hidden')
+  // customIconOptions.classList.remove('hidden')
+  // customIconPicked.classList.remove('hidden')
+  // gameControls.classList.remove('hidden')
+  customInstructions.classList.remove('hidden')
+  instruction1.innerText = "Welcome to Custom Mode!"
 }
 
 // function revealGameModeSelection() {
