@@ -91,6 +91,7 @@ main {
   padding-left: 1em;
   padding-right: 1em;
   margin-bottom: 2em;
+  margin-top: 10vh;
 }
 
 .custom-instructions {
@@ -98,9 +99,14 @@ main {
 }
 
 .get-started-button {
-  border: 2px solid black;
-  height: 5vh;
-  width: 10vw;
+  border: 1px solid black;
+  background-color: lightcoral;
+  height: 7vh;
+  width: 14vw;
+  font-size: 2em;
+  color: white;
+  font-family: inherit;
+  border-radius: 0.5em;
 }
 
 .custom-mode {
