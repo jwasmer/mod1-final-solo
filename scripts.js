@@ -27,6 +27,7 @@ var checkOrderButton = document.querySelector('.check-order-button')
 var customRules = document.querySelector('.custom-rules')
 var startPlayingButton = document.querySelector('.start-playing-button')
 var finalizeRules = document.querySelector('.finalize-rules')
+var drawsAgainst = document.querySelector('.draws-against')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
 var chosenFighters = customIconPicked.querySelectorAll('.custom-icons')
@@ -55,11 +56,11 @@ function checkRules() {
   event.preventDefault()
   customRules.classList.add('hidden')
   finalizeRules.classList.remove('hidden')
+  customFighters.forEach(image => {drawsAgainst.innerHTML += image})
 }
 
 function updateCustomFighters() {
   event.preventDefault()
-  chosenFighters.forEach(icon => {customFighters.push(icon.alt)})
   instruction1.innerText = "Check your matchups!"
   customIconOptions.classList.add('hidden')
   customIconPicked.classList.add('hidden')
@@ -87,14 +88,15 @@ function dropFighter(event) {
   if (event.target === fighterDragged) {
     return
   }
-  else if (event.target === customIconPicked || event.target === customIconOptions) {
-    fighterDragged.parentNode.removeChild(fighterDragged)
-    console.log(fighterDragged.closest('img'))
-    event.target.appendChild(fighterDragged)
+  else if (event.target === customIconPicked || event.target.parentNode === customIconPicked) {
+    customFighters.push(fighterDragged.outerHTML)
+    customIconOptions.removeChild(fighterDragged)
+    customIconPicked.appendChild(fighterDragged)
   }
-  else if (event.target.dataset.draggable === "true") {
-    fighterDragged.parentNode.removeChild(fighterDragged)
-    event.target.parentNode.appendChild(fighterDragged)
+  else if (event.target === customIconOptions || event.target.parentNode === customIconOptions) {
+    customFighters.splice(customFighters.indexOf(fighterDragged.outerHTML), 1)
+    customIconPicked.removeChild(fighterDragged)
+    customIconOptions.appendChild(fighterDragged)
   }
 }
 
