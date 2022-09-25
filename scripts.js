@@ -8,6 +8,7 @@ var fighterDragged;
 
 assignPlayers()
 
+var main = document.querySelector('main')
 var classicIconForm = document.querySelector('.classic-icon-form')
 var customIconForm = document.querySelector('.custom-icon-form')
 var customIconOptions = document.querySelector('.custom-icon-options')
@@ -33,7 +34,7 @@ customIconPicked.addEventListener('dragover', (event) => {event.preventDefault()
 customIconPicked.addEventListener('drop', (event) => {dropFighter(event)})
 customIconOptions.addEventListener('dragover', (event) => {event.preventDefault()})
 customIconOptions.addEventListener('drop', (event) => {dropFighter(event)})
-customIconForm.addEventListener('dragstart', (event) => makeDraggable(event))
+main.addEventListener('dragstart', (event) => makeDraggable(event))
 
 // ***** UI *****
 function makeDraggable(event) {
@@ -49,6 +50,7 @@ function dropFighter(event) {
   }
   else if (event.target === customIconPicked || event.target === customIconOptions) {
     fighterDragged.parentNode.removeChild(fighterDragged)
+    console.log(fighterDragged.closest('img'))
     event.target.appendChild(fighterDragged)
   }
   else if (event.target.dataset.draggable === "true") {
@@ -87,7 +89,8 @@ function chooseClassicFighter (event) {
 function buildCustomPage() {
   hideGameModeSelection()
   beginNewGame(customFighters)
-  customIconForm.classList.remove('hidden')
+  customIconOptions.classList.remove('hidden')
+  customIconPicked.classList.remove('hidden')
   gameControls.classList.remove('hidden')
 }
 
