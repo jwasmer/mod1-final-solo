@@ -23,6 +23,7 @@ var instruction1 = document.querySelector('.instruction-1')
 var instruction2 = document.querySelector('.instruction-2')
 var customInstructions = document.querySelector('.custom-instructions')
 var getStartedButton = document.querySelector('.get-started-button')
+var checkOrderButton = document.querySelector('.check-order-button')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
 
@@ -49,11 +50,12 @@ function getStarted(event) {
   event.preventDefault()
   // getStartedButton.style.opacity = 0
   customInstructions.classList.add('hidden')
-  instruction1.innerText = "Drag from here..."
+  instruction1.innerText = "Drag your favorites!"
   customIconOptions.classList.remove('hidden')
-  instruction2.classList.remove('hidden')
-  instruction2.innerText = "... down to here!"
+  // instruction2.classList.remove('hidden')
+  // instruction2.innerText = "... down to here!"
   customIconPicked.classList.remove('hidden')
+  checkOrderButton.classList.remove('hidden')
 }
 
 function makeDraggable(event) {
