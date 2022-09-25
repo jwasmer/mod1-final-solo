@@ -24,8 +24,11 @@ var instruction2 = document.querySelector('.instruction-2')
 var customInstructions = document.querySelector('.custom-instructions')
 var getStartedButton = document.querySelector('.get-started-button')
 var checkOrderButton = document.querySelector('.check-order-button')
+var customRules = document.querySelector('.custom-rules')
+var startPlayingButton = document.querySelector('.start-playing-button')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
+var chosenFighters = customIconPicked.querySelectorAll('.custom-icons')
 
 var classicMode = document.getElementById('classic')
 var computerScore = document.getElementById('computer-score')
@@ -43,17 +46,32 @@ customIconOptions.addEventListener('dragover', (event) => {event.preventDefault(
 customIconOptions.addEventListener('drop', (event) => {dropFighter(event)})
 main.addEventListener('dragstart', (event) => makeDraggable(event))
 getStartedButton.addEventListener('click', getStarted)
+checkOrderButton.addEventListener('click', updateCustomFighters)
+startPlayingButton.addEventListener('click', checkRules)
 
 
 // ***** UI *****
+function checkRules() {
+  event.preventDefault()
+  customRules.classList.add('hidden')
+  
+}
+
+function updateCustomFighters() {
+  event.preventDefault()
+  chosenFighters.forEach(icon => {customFighters.push(icon.alt)})
+  instruction1.innerText = "Check your matchups!"
+  customIconOptions.classList.add('hidden')
+  customIconPicked.classList.add('hidden')
+  checkOrderButton.classList.add('hidden')
+  customRules.classList.remove('hidden')
+}
+
 function getStarted(event) {
   event.preventDefault()
-  // getStartedButton.style.opacity = 0
   customInstructions.classList.add('hidden')
   instruction1.innerText = "Drag your favorites!"
   customIconOptions.classList.remove('hidden')
-  // instruction2.classList.remove('hidden')
-  // instruction2.innerText = "... down to here!"
   customIconPicked.classList.remove('hidden')
   checkOrderButton.classList.remove('hidden')
 }

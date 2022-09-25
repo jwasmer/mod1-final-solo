@@ -63,11 +63,18 @@
         <div class="custom-icon-picked hidden"></div>
         <button class="check-order-button hidden"> Fighters Chosen! </button>
       </form>
-      <form class="game-rules-tutorial hidden">
-        <p> Now that you've picked your fighters, you get to decide who each fighter wins and loses to! </p>
-        <p> Here's how it works: Each fighter will LOSE against fighters to its left, and WIN against fighters to its right.</p>
-        <p> Move them around until you're satisfied, then click the button when you're ready to play! </p>
-        <button> Start Playing! </button>
+      <form class="flex column custom-rules hidden">
+        <div class="game-rules-tutorial">
+          <p> Now that you've picked your fighters, you get to decide who each fighter wins and loses to! </p>
+          <p> Here's how it works: Each fighter will LOSE against fighters to its left, and WIN against fighters to its right.</p>
+          <p> Move them around until you're satisfied, then click the button when you're ready to play! </p>
+        </div>
+        <button class="start-playing-button"> Start Playing! </button>
+      </form>
+      <form class="finalize-rules flex hidden">
+        <div class="loses-against"></div>
+        <div class="draws-against"></div>
+        <div class="wins-against"></div>
       </form>
       <form class="flex column hidden" id="game-controls" >
         <p class="fighter-label"></p>
