@@ -26,6 +26,7 @@ var getStartedButton = document.querySelector('.get-started-button')
 var checkOrderButton = document.querySelector('.check-order-button')
 var customRules = document.querySelector('.custom-rules')
 var startPlayingButton = document.querySelector('.start-playing-button')
+var finalizeRules = document.querySelector('.finalize-rules')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
 var chosenFighters = customIconPicked.querySelectorAll('.custom-icons')
@@ -49,12 +50,11 @@ getStartedButton.addEventListener('click', getStarted)
 checkOrderButton.addEventListener('click', updateCustomFighters)
 startPlayingButton.addEventListener('click', checkRules)
 
-
 // ***** UI *****
 function checkRules() {
   event.preventDefault()
   customRules.classList.add('hidden')
-  
+  finalizeRules.classList.remove('hidden')
 }
 
 function updateCustomFighters() {
