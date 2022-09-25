@@ -16,7 +16,7 @@ var customIconPicked = document.querySelector('.custom-icon-picked')
 var customIcons = document.querySelector('.custom-icons')
 var fightButton = document.querySelector('.fight-button')
 var fighterLabel = document.querySelector('.fighter-label')
-var instructionHeader = document.querySelector('.instruction')
+var instruction1 = document.querySelector('.instruction-1')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
 
@@ -62,7 +62,7 @@ function dropFighter(event) {
 function hideGameModeSelection() {
   classicMode.classList.add('hidden')
   customMode.classList.add('hidden')
-  instructionHeader.innerText = "Choose your fighter!"
+  instruction1.innerText = "Choose your fighter!"
 }
 
 function buildClassicPage () {
