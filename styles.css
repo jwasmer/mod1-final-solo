@@ -224,3 +224,22 @@ main {
   border-radius: 0.5em;
   margin-top: 3vh;
 }
+
+
+.loses-against {
+  width: 20%;
+  height: 30%;
+  border: 1px solid black;
+}
+
+.wins-against {
+  width: 20%;
+  height: 30%;
+  border: 1px solid black;
+}
+
+.draws-against {
+  width: 60%;
+  height: 10%;
+  border: 1px solid black;
+}
