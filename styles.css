@@ -93,7 +93,20 @@ main {
   margin: 5px;
 }
 
-.tutorial-container {
+.pick-fighters-tutorial {
+  width: 30%;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 1em;
+  text-align: center;
+  font-size: x-large;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 6vh;
+  margin-top: 6vh;
+}
+
+.game-rules-tutorial {
   width: 30%;
   height: auto;
   border: 2px solid black;
