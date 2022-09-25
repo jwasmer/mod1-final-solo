@@ -59,6 +59,10 @@ main {
   display: grid;
   height: 14vw;
   width: 25vw;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(6, 33%);
+  overflow-y: scroll;
+  scrollbar-width: thin;
   border: 2px solid black;
 }
 
@@ -66,10 +70,11 @@ main {
   display: grid;
   height: 14vw;
   width: 25vw;
-  grid-template-columns: repeat(5, auto);
-  border: 2px solid black;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(6, 33%);
   overflow-y: scroll;
   scrollbar-width: thin;
+  border: 2px solid black;
 }
 
 .custom-icons{
