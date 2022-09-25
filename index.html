@@ -71,10 +71,16 @@
         </div>
         <button class="start-playing-button"> Start Playing! </button>
       </form>
-      <form class="finalize-rules flex hidden">
-        <div class="loses-against"></div>
+      <form class="finalize-rules flex column hidden">
         <div class="draws-against"></div>
-        <div class="wins-against"></div>
+        <div class="flex">
+          <div class="loses-against">
+            <h3 class="finalize-rules-header">Beats fighter:</h3>
+          </div>
+          <div class="wins-against">
+            <h3 class="finalize-rules-header">Fighter beats:</h3>
+          </div>
+        </div>
       </form>
       <form class="flex column hidden" id="game-controls" >
         <p class="fighter-label"></p>

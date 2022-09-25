@@ -227,19 +227,29 @@ main {
 
 
 .loses-against {
-  width: 20%;
-  height: 30%;
+  width: 20vw;
+  height: 30vh;
   border: 1px solid black;
+  margin-right: 10vw;
+  margin-top: 5vh;
 }
 
 .wins-against {
-  width: 20%;
-  height: 30%;
+  width: 20vw;
+  height: 30vh;
   border: 1px solid black;
+  margin-left: 10vw;
+  margin-top: 5vh;
 }
 
 .draws-against {
-  width: 60%;
-  height: 10%;
+  width: 60vw;
+  height: 10vh;
   border: 1px solid black;
+}
+
+.finalize-rules-header {
+  text-align: center;
+  font-size: 2em;
+  margin: 0.5em;
 }
