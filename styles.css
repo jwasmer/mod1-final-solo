@@ -138,11 +138,26 @@ main {
 
 
 .fight-button {
-  height: 5vw;
-  width: 10vw;
+  height: 2em;
+  width: 6em;
   background-color: lightcoral;
   font-size: 2em;
   color: white;
+  font-family: inherit;
+  border: 1px solid black;
+  border-radius: .5em;
+}
+
+.main-menu-button {
+  height: 2em;
+  width: 6em;
+  background-color: lightcoral;
+  font-size: 2em;
+  color: white;
+  font-family: inherit;
+  margin: 0.5em;
+  border: 1px solid black;
+  border-radius: .5em;
 }
 
 .fighter-label {
