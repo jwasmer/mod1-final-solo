@@ -46,16 +46,30 @@ main {
     transition-duration: 200ms;
   }
 
-.classic-mode {
-  width: 20%;
-  height: 20%;
+.menu-icons {
+  height: 4.5em;
+  width: 4.5em;
+  margin-bottom: 1em;
+}
+
+.menu-icon-container {
+  width: 100%;
+  margin: 0px;
+  justify-content: space-evenly;
+}
+
+.menu-classic-mode {
+  width: 25em;
+  height: 9em;
   border: 1px solid black;
   margin: 1vh;
   background-color: rgb(179, 193, 255);
+  transition: 100ms;
+  border-radius: 2em;
 }
 
   .classic-mode:hover {
-    background-color: rgb(133, 148, 213);
+    background-color: rgb(129, 143, 205);
   }
 
 .column {
@@ -135,17 +149,6 @@ main {
   /* transition: opacity 1000ms; */
 }
 
-.custom-mode {
-  width: 20%;
-  height: 20%;
-  border: 1px solid black;
-  margin: 1vh;
-  background-color: rgb(255, 137, 137);
-}
-
-  .custom-mode:hover {
-    background-color: rgb(220, 91, 91);
-  }
 
 .fight-button {
   height: 5vw;
@@ -189,6 +192,20 @@ main {
   font-size: 3em;
 }
 
+.menu-custom-mode {
+  width: 25em;
+  height: 9em;
+  border: 1px solid black;
+  margin: 1vh;
+  background-color: rgb(255, 137, 137);
+  transition: 100ms;
+  border-radius: 2em;
+}
+
+.menu-custom-mode:hover {
+  background-color: rgb(205, 87, 87);
+}
+
 .score {
   font-size: 1.5em;
 }
@@ -206,6 +223,20 @@ main {
   height: 11vw;
   width: 11vw;
 }
+
+.menu-spicy-mode {
+  width: 25em;
+  height: 9em;
+  border: 1px solid black;
+  margin: 1em;
+  background-color: rgb(206, 169, 6);
+  transition: 100ms;
+  border-radius: 2em;
+}
+
+  .spicy-mode:hover {
+    background-color: rgb(156, 119, 0);
+  }
 
 .title {
   margin-top: 2vh;
