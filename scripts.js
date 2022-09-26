@@ -119,12 +119,10 @@ function chooseClassicFighter (event) {
   if (human.fighter !== event.target.alt) {
     classicIcons.forEach(icon => icon.classList.remove('selected-fighter'))
     human.fighter = event.target.alt
-    fighterLabel.innerText = `${human.fighter.toUpperCase()}!`
     event.target.classList.add('selected-fighter')
   }
   else if (event.target.alt === human.fighter) {
     human.takeTurn('')
-    fighterLabel.innerText = ''
     event.target.classList.remove('selected-fighter')
   }
 }

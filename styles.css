@@ -46,18 +46,6 @@ main {
     transition-duration: 200ms;
   }
 
-.menu-icons {
-  height: 4.5em;
-  width: 4.5em;
-  margin-bottom: 1em;
-}
-
-.menu-icon-container {
-  width: 100%;
-  margin: 0px;
-  justify-content: space-evenly;
-}
-
 
 .column {
   flex-direction: column;
@@ -136,7 +124,6 @@ main {
   /* transition: opacity 1000ms; */
 }
 
-
 .fight-button {
   height: 2em;
   width: 6em;
@@ -144,18 +131,6 @@ main {
   font-size: 2em;
   color: white;
   font-family: inherit;
-  border: 1px solid black;
-  border-radius: .5em;
-}
-
-.main-menu-button {
-  height: 2em;
-  width: 6em;
-  background-color: lightcoral;
-  font-size: 2em;
-  color: white;
-  font-family: inherit;
-  margin: 0.5em;
   border: 1px solid black;
   border-radius: .5em;
 }
@@ -194,6 +169,18 @@ main {
   font-size: 3em;
 }
 
+.main-menu-button {
+  height: 2em;
+  width: 6em;
+  background-color: lightcoral;
+  font-size: 2em;
+  color: white;
+  font-family: inherit;
+  margin: 0.5em;
+  border: 1px solid black;
+  border-radius: .5em;
+}
+
 .menu-classic-mode {
   width: 25em;
   height: 9em;
@@ -222,6 +209,18 @@ main {
   background-color: rgb(205, 87, 87);
 }
 
+.menu-icons {
+  height: 4.5em;
+  width: 4.5em;
+  margin-bottom: 1em;
+}
+
+.menu-icon-container {
+  width: 100%;
+  margin: 0px;
+  justify-content: space-evenly;
+}
+
 .menu-spicy-mode {
   width: 25em;
   height: 9em;
@@ -234,6 +233,10 @@ main {
 
 .menu-spicy-mode:hover {
   background-color: rgb(156, 119, 0);
+}
+
+.resolve-winner {
+  
 }
 
 .score {
