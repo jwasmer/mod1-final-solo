@@ -24,8 +24,13 @@ var instruction2 = document.querySelector('.instruction-2')
 var customInstructions = document.querySelector('.custom-instructions')
 var getStartedButton = document.querySelector('.get-started-button')
 var checkOrderButton = document.querySelector('.check-order-button')
+var customRules = document.querySelector('.custom-rules')
+var startPlayingButton = document.querySelector('.start-playing-button')
+var finalizeRules = document.querySelector('.finalize-rules')
+var drawsAgainst = document.querySelector('.draws-against')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
+var chosenFighters = customIconPicked.querySelectorAll('.custom-icons')
 
 var classicMode = document.getElementById('classic')
 var computerScore = document.getElementById('computer-score')
@@ -43,17 +48,31 @@ customIconOptions.addEventListener('dragover', (event) => {event.preventDefault(
 customIconOptions.addEventListener('drop', (event) => {dropFighter(event)})
 main.addEventListener('dragstart', (event) => makeDraggable(event))
 getStartedButton.addEventListener('click', getStarted)
-
+checkOrderButton.addEventListener('click', updateCustomFighters)
+startPlayingButton.addEventListener('click', checkRules)
 
 // ***** UI *****
+function checkRules() {
+  event.preventDefault()
+  customRules.classList.add('hidden')
+  finalizeRules.classList.remove('hidden')
+  customFighters.forEach(image => {drawsAgainst.innerHTML += image})
+}
+
+function updateCustomFighters() {
+  event.preventDefault()
+  instruction1.innerText = "Check your matchups!"
+  customIconOptions.classList.add('hidden')
+  customIconPicked.classList.add('hidden')
+  checkOrderButton.classList.add('hidden')
+  customRules.classList.remove('hidden')
+}
+
 function getStarted(event) {
   event.preventDefault()
-  // getStartedButton.style.opacity = 0
   customInstructions.classList.add('hidden')
   instruction1.innerText = "Drag your favorites!"
   customIconOptions.classList.remove('hidden')
-  // instruction2.classList.remove('hidden')
-  // instruction2.innerText = "... down to here!"
   customIconPicked.classList.remove('hidden')
   checkOrderButton.classList.remove('hidden')
 }
@@ -69,14 +88,15 @@ function dropFighter(event) {
   if (event.target === fighterDragged) {
     return
   }
-  else if (event.target === customIconPicked || event.target === customIconOptions) {
-    fighterDragged.parentNode.removeChild(fighterDragged)
-    console.log(fighterDragged.closest('img'))
-    event.target.appendChild(fighterDragged)
+  else if (event.target === customIconPicked || event.target.parentNode === customIconPicked) {
+    customFighters.push(fighterDragged.outerHTML)
+    customIconOptions.removeChild(fighterDragged)
+    customIconPicked.appendChild(fighterDragged)
   }
-  else if (event.target.dataset.draggable === "true") {
-    fighterDragged.parentNode.removeChild(fighterDragged)
-    event.target.parentNode.appendChild(fighterDragged)
+  else if (event.target === customIconOptions || event.target.parentNode === customIconOptions) {
+    customFighters.splice(customFighters.indexOf(fighterDragged.outerHTML), 1)
+    customIconPicked.removeChild(fighterDragged)
+    customIconOptions.appendChild(fighterDragged)
   }
 }
 

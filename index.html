@@ -21,7 +21,7 @@
       </form>
       <form class="flex column custom-instructions hidden">
         <div class="pick-fighters-tutorial">
-          <p>Custom Mode allows you to build your own version of Rock, Paper, Scissors! Look through the fighters on the next screen and drag down your favorites! </p>
+          <p>Custom Mode allows you to build your own version of Rock, Paper, Scissors! Look through the fighters on the next screen and drag down your favorites. </p>
           <p>There's only one rule--the number of fighters you choose has to be odd!</p>
         </div>
         <button class="get-started-button">Get Started!</button>
@@ -59,15 +59,35 @@
           <img class="custom-icons" data-draggable="true" src="assets/water-drop.png" alt="water">
           <img class="custom-icons" data-draggable="true" src="assets/whale.png" alt="whale">
         </div>
-        <h2 class="instruction-2"></h2>
         <div class="custom-icon-picked hidden"></div>
         <button class="check-order-button hidden"> Fighters Chosen! </button>
       </form>
-      <form class="game-rules-tutorial hidden">
-        <p> Now that you've picked your fighters, you get to decide who each fighter wins and loses to! </p>
-        <p> Here's how it works: Each fighter will LOSE against fighters to its left, and WIN against fighters to its right.</p>
-        <p> Move them around until you're satisfied, then click the button when you're ready to play! </p>
-        <button> Start Playing! </button>
+      <form class="flex column custom-rules hidden">
+        <div class="game-rules-tutorial">
+          <p> Now that you've picked your fighters, you get to decide who each fighter wins and loses to! </p>
+          <p> Here's how it works: Each fighter will LOSE against fighters to its left, and WIN against fighters to its right.</p>
+          <p> Move them around until you're satisfied, then click the button when you're ready to play! </p>
+        </div>
+        <button class="start-playing-button"> Start Playing! </button>
+      </form>
+      <form class="finalize-rules flex column hidden">
+
+          <div class="draws-against flex"></div>
+
+        <div class="flex">
+          <div class="flex column loses-against">
+            <h3 class="finalize-rules-header">Beats fighter: </h3>
+            <div class="finalize-rules-icons" id="loses-against-icons">
+
+            </div>
+          </div>
+          <div class="flex column wins-against">
+            <h3 class="finalize-rules-header">Fighter beats: </h3>
+            <div class="finalize-rules-icons" id="wins-against-icons">
+
+            </div>
+          </div>
+        </div>
       </form>
       <form class="flex column hidden" id="game-controls" >
         <p class="fighter-label"></p>

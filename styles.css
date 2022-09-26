@@ -94,7 +94,7 @@ main {
 }
 
 .pick-fighters-tutorial {
-  width: 30%;
+  width: 50%;
   height: auto;
   border: 2px solid black;
   border-radius: 1em;
@@ -107,7 +107,7 @@ main {
 }
 
 .game-rules-tutorial {
-  width: 30%;
+  width: 50%;
   height: auto;
   border: 2px solid black;
   border-radius: 1em;
@@ -211,4 +211,56 @@ main {
   margin-top: 2vh;
   margin-bottom: 0vh;
   font-size: 6em;
+}
+
+.start-playing-button {
+  border: 1px solid black;
+  background-color: lightcoral;
+  height: 1.75em;
+  width: 10em;
+  font-size: 2em;
+  color: white;
+  font-family: inherit;
+  border-radius: 0.5em;
+  margin-top: 3vh;
+}
+
+
+.loses-against {
+  border: 1px solid black;
+  margin-right: 5vw;
+  margin-top: 5vh;
+}
+
+.wins-against {
+  border: 1px solid black;
+  margin-left: 5vw;
+  margin-top: 5vh;
+}
+
+.draws-against {
+  width: 60vw;
+  height: 10vh;
+  border: 1px solid black;
+  justify-content: space-evenly;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+.finalize-rules-header {
+  text-align: center;
+  font-size: 2em;
+  margin: 0.5em;
+}
+
+.finalize-rules-icons {
+  height: 14vw;
+  width: 25vw;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(3, 33%);
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  border: 1px solid black;
+  display: grid;
 }
