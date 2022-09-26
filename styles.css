@@ -94,7 +94,7 @@ main {
 }
 
 .pick-fighters-tutorial {
-  width: 30%;
+  width: 50%;
   height: auto;
   border: 2px solid black;
   border-radius: 1em;
@@ -107,7 +107,7 @@ main {
 }
 
 .game-rules-tutorial {
-  width: 30%;
+  width: 50%;
   height: auto;
   border: 2px solid black;
   border-radius: 1em;
@@ -242,6 +242,10 @@ main {
   width: 60vw;
   height: 10vh;
   border: 1px solid black;
+  justify-content: space-evenly;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
 }
 
 .finalize-rules-header {
