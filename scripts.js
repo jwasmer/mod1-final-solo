@@ -28,6 +28,7 @@ var customRules = document.querySelector('.custom-rules')
 var startPlayingButton = document.querySelector('.start-playing-button')
 var finalizeRules = document.querySelector('.finalize-rules')
 var drawsAgainst = document.querySelector('.draws-against')
+var spicyMode = document.querySelector('.menu-spicy-mode')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
 var chosenFighters = customIconPicked.querySelectorAll('.custom-icons')
@@ -103,6 +104,7 @@ function dropFighter(event) {
 function hideGameModeSelection() {
   classicMode.classList.add('hidden')
   customMode.classList.add('hidden')
+  spicyMode.classList.add('hidden')
 }
 
 function buildClassicPage () {
