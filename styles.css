@@ -58,19 +58,6 @@ main {
   justify-content: space-evenly;
 }
 
-.menu-classic-mode {
-  width: 25em;
-  height: 9em;
-  border: 1px solid black;
-  margin: 1vh;
-  background-color: rgb(179, 193, 255);
-  transition: 100ms;
-  border-radius: 2em;
-}
-
-  .classic-mode:hover {
-    background-color: rgb(129, 143, 205);
-  }
 
 .column {
   flex-direction: column;
@@ -192,6 +179,20 @@ main {
   font-size: 3em;
 }
 
+.menu-classic-mode {
+  width: 25em;
+  height: 9em;
+  border: 1px solid black;
+  margin: 1vh;
+  background-color: rgb(179, 193, 255);
+  transition: 100ms;
+  border-radius: 2em;
+}
+
+.menu-classic-mode:hover {
+  background-color: rgb(129, 143, 205);
+}
+
 .menu-custom-mode {
   width: 25em;
   height: 9em;
@@ -204,6 +205,20 @@ main {
 
 .menu-custom-mode:hover {
   background-color: rgb(205, 87, 87);
+}
+
+.menu-spicy-mode {
+  width: 25em;
+  height: 9em;
+  border: 1px solid black;
+  margin: 1em;
+  background-color: rgb(206, 169, 6);
+  transition: 100ms;
+  border-radius: 2em;
+}
+
+.menu-spicy-mode:hover {
+  background-color: rgb(156, 119, 0);
 }
 
 .score {
@@ -223,20 +238,6 @@ main {
   height: 11vw;
   width: 11vw;
 }
-
-.menu-spicy-mode {
-  width: 25em;
-  height: 9em;
-  border: 1px solid black;
-  margin: 1em;
-  background-color: rgb(206, 169, 6);
-  transition: 100ms;
-  border-radius: 2em;
-}
-
-  .spicy-mode:hover {
-    background-color: rgb(156, 119, 0);
-  }
 
 .title {
   margin-top: 2vh;
