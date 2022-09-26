@@ -29,6 +29,7 @@ var startPlayingButton = document.querySelector('.start-playing-button')
 var finalizeRules = document.querySelector('.finalize-rules')
 var drawsAgainst = document.querySelector('.draws-against')
 var spicyMode = document.querySelector('.menu-spicy-mode')
+var resolveWinner = document.querySelector('.resolve-winner')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
 var chosenFighters = customIconPicked.querySelectorAll('.custom-icons')
@@ -113,6 +114,13 @@ function buildClassicPage () {
   classicIconForm.classList.remove('hidden')
   gameControls.classList.remove('hidden')
   instruction1.innerText = "Choose your fighter!"
+}
+
+function hideClassicPage() {
+  classicIconForm.classList.add('hidden')
+  gameControls.classList.add('hidden')
+  resolveWinner.classList.remove('hidden')
+  instruction1.innerText = "Fight!"
 }
 
 function chooseClassicFighter (event) {
