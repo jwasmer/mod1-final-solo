@@ -12,9 +12,6 @@ var spicyFighterImages = [
   'assets/water-drop.png', 
   'assets/fossil.png']
 
-var customFighters = []
-var customFighterImages = []
-
 var computer;
 var game;
 var human;
@@ -22,17 +19,12 @@ var fighterDragged;
 
 assignPlayers()
 
-var checkOrderButton = document.querySelector('.custom__choose-fighter-btn')
+// ***** document. variables *****
+
+var article = document.querySelector('article')
 var classicIconForm = document.querySelector('.classic__choose-fighter')
-var customIconForm = document.querySelector('.custom-icon-form')
-var customIconOptions = document.querySelector('.custom__fighter-choices')
-var customIconPicked = document.querySelector('.custom__fighters-chosen')
-var customIcons = document.querySelector('custom__fighters')
-var customInstructions = document.querySelector('.custom__instruction-text')
 var fightButton = document.querySelector('.controls__fight-btn')
-var getStartedButton = document.querySelector('.custom__leave-tutorial-btn')
 var instruction1 = document.querySelector('.subtitle')
-var instruction2 = document.querySelector('.custom__fighters-chosen-text')
 var main = document.querySelector('main')
 var spicyMode = document.querySelector('.main__spicy-mode')
 var spicyIconForm = document.querySelector('.spicy__choose-fighter')
@@ -40,27 +32,19 @@ var replayButton = document.querySelector('.controls__replay-btn')
 var mainMenuButton = document.querySelector('.controls__menu-btn')
 
 var classicIcons = document.querySelectorAll('.classic__fighter-icon')
-var chosenFighters = customIconPicked.querySelectorAll('custom__fighters')
 var spicyIcons = document.querySelectorAll('.spicy__fighter-icon')
 
 var classicMode = document.getElementById('classic')
 var computerScore = document.getElementById('computer-score')
-var customMode = document.getElementById('custom')
 var gameControls = document.getElementById('game-controls')
 var humanScore = document.getElementById('human-score')
 var resolveWinner = document.getElementById('resolve')
 
-checkOrderButton.addEventListener('click', updateCustomFighters)
+// ***** Event Listeners *****
+
 classicIconForm.addEventListener('click', chooseClassicFighter)
 classicMode.addEventListener('click', buildClassicPage)
-customMode.addEventListener('click', buildCustomPage)
-// customIconPicked.addEventListener('dragover', (event) => {event.preventDefault()})
-// customIconPicked.addEventListener('drop', (event) => {dropFighter(event)})
-// customIconOptions.addEventListener('dragover', (event) => {event.preventDefault()})
-// customIconOptions.addEventListener('drop', (event) => {dropFighter(event)})
 fightButton.addEventListener('click', playRound)
-getStartedButton.addEventListener('click', getStarted)
-main.addEventListener('dragstart', (event) => makeDraggable(event))
 mainMenuButton.addEventListener('click', loadMainMenu)
 replayButton.addEventListener('click', replayGame)
 spicyIconForm.addEventListener('click', chooseSpicyFighter)
@@ -79,14 +63,13 @@ function beginNewGame(fighters, fighterImages, mode) {
 
 function hideGameModeSelection() {
   classicMode.classList.add('hidden')
-  customMode.classList.add('hidden')
   spicyMode.classList.add('hidden')
 }
 
 function buildMainMenu(){
   classicMode.classList.remove('hidden')
-  customMode.classList.remove('hidden')
   spicyMode.classList.remove('hidden')
+  article.classList.remove('hidden')
 }
 
 function loadMainMenu() {
@@ -115,6 +98,7 @@ function buildClassicPage () {
   beginNewGame(classicFighters, classicFighterImages, 'classic')
   classicIconForm.classList.remove('hidden')
   gameControls.classList.remove('hidden')
+  article.classList.add('hidden')
   instruction1.innerText = "Choose your fighter!"
 }
 
@@ -142,11 +126,10 @@ function chooseClassicFighter (event) {
 
 function buildSpicyPage () {
   hideGameModeSelection()
-  if (game.mode !== 'spicy') {
-    beginNewGame(spicyFighters, spicyFighterImages, 'spicy')
-  }
+  beginNewGame(spicyFighters, spicyFighterImages, 'spicy')
   spicyIconForm.classList.remove('hidden')
   gameControls.classList.remove('hidden')
+  article.classList.add('hidden')
   instruction1.innerText = "Choose your fighter!"
 }
 
@@ -170,66 +153,6 @@ function chooseSpicyFighter (event) {
   }
 }
 
-// ***** Custom Mode *****
-
-function buildCustomPage() {
-  hideGameModeSelection()
-  beginNewGame(customFighters, customFighterImages, 'custom')
-  // customIconOptions.classList.remove('hidden')
-  // customIconPicked.classList.remove('hidden')
-  // gameControls.classList.remove('hidden')
-  customInstructions.classList.remove('hidden')
-  instruction1.innerText = "Welcome to Custom Mode!"
-}
-
-function getStarted(event) {
-  event.preventDefault()
-  customInstructions.classList.add('hidden')
-  instruction1.innerText = "Drag your favorites!"
-  customIconOptions.classList.remove('hidden')
-  customIconPicked.classList.remove('hidden')
-  checkOrderButton.classList.remove('hidden')
-}
-
-function makeDraggable(event) {
-  if (event.target.dataset.draggable === "true") {
-    fighterDragged = event.target
-  }
-}
-
-function dropFighter(event) {
-  event.preventDefault()
-  if (event.target === fighterDragged) {
-    return
-  }
-  else if (event.target === customIconPicked || event.target.parentNode === customIconPicked) {
-    customFighters.push(fighterDragged.outerHTML)
-    customIconOptions.removeChild(fighterDragged)
-    customIconPicked.appendChild(fighterDragged)
-  }
-  else if (event.target === customIconOptions || event.target.parentNode === customIconOptions) {
-    customFighters.splice(customFighters.indexOf(fighterDragged.outerHTML), 1)
-    customIconPicked.removeChild(fighterDragged)
-    customIconOptions.appendChild(fighterDragged)
-  }
-}
-
-function updateCustomFighters() {
-  event.preventDefault()
-  instruction1.innerText = "Check your matchups!"
-  customIconOptions.classList.add('hidden')
-  customIconPicked.classList.add('hidden')
-  checkOrderButton.classList.add('hidden')
-  customRules.classList.remove('hidden')
-}
-
-function checkRules() {
-  event.preventDefault()
-  customRules.classList.add('hidden')
-  finalizeRules.classList.remove('hidden')
-  customFighters.forEach(image => {drawsAgainst.innerHTML += image})
-}
-
 // ***** Resolve Winner *****
 
 function hideResolvePage() {
@@ -248,10 +171,6 @@ function replayGame() {
   else if (game.mode === 'spicy') {
     console.log('spicy')
     buildSpicyPage()
-  }
-  else if (game.mode === 'custom') {
-    console.log('custom')
-    buildCustomPage()
   }
 }
 

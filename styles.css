@@ -1,3 +1,10 @@
+article {
+  width: 25em;
+  height: 9em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 body {
   height: 100vh;
   width: 100vw;
@@ -12,6 +19,11 @@ html {
 main {
   width: 70%;
   background-color:aliceblue
+}
+
+.article-text {
+  margin: 0px;
+  text-align: center;
 }
 
 .chosen-fighter {
@@ -77,83 +89,6 @@ main {
   margin: 0.5em;
   border: 1px solid black;
   border-radius: .5em;
-}
-
-.custom__choose-fighter-btn {
-  border: 1px solid black;
-  background-color: lightcoral;
-  height: 1.75em;
-  width: 10em;
-  font-size: 2em;
-  color: white;
-  font-family: inherit;
-  border-radius: 0.5em;
-  margin-top: 3vh;
-}
-
-.custom__choose-fighter-text {
-  width: 50%;
-  height: auto;
-  border: 2px solid black;
-  border-radius: 1em;
-  text-align: center;
-  font-size: x-large;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin-bottom: 6vh;
-  margin-top: 6vh;
-}
-
-.custom__fighter-choices {
-  display: grid;
-  height: 14vw;
-  width: 25vw;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(3, 33%);
-  overflow-y: scroll;
-  scrollbar-width: thin;
-  border: 2px solid black;
-}
-
-.custom__fighters {
-  grid-column: auto;
-  grid-row: auto;
-  height: 4vw;
-  width: 4vw;
-  margin: 5px;
-}
-
-.custom__fighters-chosen {
-  display: grid;
-  height: 14vw;
-  width: 25vw;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(3, 33%);
-  overflow-y: scroll;
-  scrollbar-width: thin;
-  border: 2px solid black;
-}
-
-.custom__fighters-chosen-text {
-  margin-top: 3vh;
-  margin-bottom: 1vh;
-  font-size: 3em;
-}
-
-.custom__instruction-text {
-  align-items: center;
-}
-
-.custom__leave-tutorial-btn {
-  border: 1px solid black;
-  background-color: lightcoral;
-  height: 1.75em;
-  width: 10em;
-  font-size: 2em;
-  color: white;
-  font-family: inherit;
-  border-radius: 0.5em;
-  /* transition: opacity 1000ms; */
 }
 
 .flex {

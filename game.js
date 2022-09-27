@@ -2,7 +2,7 @@ class Game {
   constructor(fighters, fighterImages, mode) {
     this.fighters = fighters
     this.fighterImages = fighterImages
-    this.mode = mode
+    this.mode = mode || ''
     this.centeredFighters = []
     this.isOdd = true
     this.midpoint;
