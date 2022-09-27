@@ -51,7 +51,80 @@ getStartedButton.addEventListener('click', getStarted)
 main.addEventListener('dragstart', (event) => makeDraggable(event))
 startPlayingButton.addEventListener('click', checkRules)
 
-// ***** UI *****
+// ***** Main Menu *****
+
+function hideGameModeSelection() {
+  classicMode.classList.add('hidden')
+  customMode.classList.add('hidden')
+  spicyMode.classList.add('hidden')
+}
+
+function assignPlayers() {
+  human = new Person()
+  computer = new Person()
+}
+
+function beginNewGame(fightersArray, mode) {
+  game = new Game(fightersArray, mode)
+}
+
+// ***** Classic Mode *****
+
+function buildClassicPage () {
+  hideGameModeSelection()
+  beginNewGame(classicFighters)
+  classicIconForm.classList.remove('hidden')
+  gameControls.classList.remove('hidden')
+  instruction1.innerText = "Choose your fighter!"
+}
+
+function hideClassicPage() {
+  classicIconForm.classList.add('hidden')
+  gameControls.classList.add('hidden')
+  resolveWinner.classList.remove('hidden')
+  instruction1.innerText = "Fight!"
+}
+
+function chooseClassicFighter (event) {
+  if (human.fighter !== event.target.alt) {
+    classicIcons.forEach(icon => icon.classList.remove('selected-fighter'))
+    human.takeTurn(event.target.alt)
+    human.fighterImg = event.target.outerHTML
+    event.target.classList.add('selected-fighter')
+  }
+  else if (event.target.alt === human.fighter) {
+    human.takeTurn('')
+    event.target.classList.remove('selected-fighter')
+  }
+}
+
+function playClassicRound() {
+  event.preventDefault();
+  computer.takeTurn()
+  updateResolvePage()
+  game.findMidpoint(game.fighters)
+  game.findFighterOffset(game.midpoint, game.fighters, human.fighter)
+  game.centerFighterOnMidpoint(game.fighters, human.offset)
+  game.findComputerIndex(game.centeredFighters, computer.fighter)
+  game.determineWinner(computer.fighter, human.fighter, game.midpoint)
+}
+
+// ***** Spicy Mode *****
+
+
+
+// ***** Custom Mode *****
+
+function buildCustomPage() {
+  hideGameModeSelection()
+  beginNewGame(customFighters)
+  // customIconOptions.classList.remove('hidden')
+  // customIconPicked.classList.remove('hidden')
+  // gameControls.classList.remove('hidden')
+  customInstructions.classList.remove('hidden')
+  instruction1.innerText = "Welcome to Custom Mode!"
+}
+
 function checkRules() {
   event.preventDefault()
   customRules.classList.add('hidden')
@@ -100,26 +173,7 @@ function dropFighter(event) {
   }
 }
 
-function hideGameModeSelection() {
-  classicMode.classList.add('hidden')
-  customMode.classList.add('hidden')
-  spicyMode.classList.add('hidden')
-}
-
-function buildClassicPage () {
-  hideGameModeSelection()
-  beginNewGame(classicFighters)
-  classicIconForm.classList.remove('hidden')
-  gameControls.classList.remove('hidden')
-  instruction1.innerText = "Choose your fighter!"
-}
-
-function hideClassicPage() {
-  classicIconForm.classList.add('hidden')
-  gameControls.classList.add('hidden')
-  resolveWinner.classList.remove('hidden')
-  instruction1.innerText = "Fight!"
-}
+// ***** Resolve Winner *****
 
 function updateResolvePage() {
   event.preventDefault()
@@ -136,47 +190,4 @@ function updateResolvePage() {
     }
   })
   hideClassicPage()
-}
-
-function buildCustomPage() {
-  hideGameModeSelection()
-  beginNewGame(customFighters)
-  // customIconOptions.classList.remove('hidden')
-  // customIconPicked.classList.remove('hidden')
-  // gameControls.classList.remove('hidden')
-  customInstructions.classList.remove('hidden')
-  instruction1.innerText = "Welcome to Custom Mode!"
-}
-
-function chooseClassicFighter (event) {
-  if (human.fighter !== event.target.alt) {
-    classicIcons.forEach(icon => icon.classList.remove('selected-fighter'))
-    human.takeTurn(event.target.alt)
-    human.fighterImg = event.target.outerHTML
-    event.target.classList.add('selected-fighter')
-  }
-  else if (event.target.alt === human.fighter) {
-    human.takeTurn('')
-    event.target.classList.remove('selected-fighter')
-  }
-}
-
-function assignPlayers() {
-  human = new Person()
-  computer = new Person()
-}
-
-function beginNewGame(fightersArray, mode) {
-  game = new Game(fightersArray, mode)
-}
-
-function playClassicRound() {
-  event.preventDefault();
-  computer.takeTurn()
-  updateResolvePage()
-  game.findMidpoint(game.fighters)
-  game.findFighterOffset(game.midpoint, game.fighters, human.fighter)
-  game.centerFighterOnMidpoint(game.fighters, human.offset)
-  game.findComputerIndex(game.centeredFighters, computer.fighter)
-  game.determineWinner(computer.fighter, human.fighter, game.midpoint)
 }
