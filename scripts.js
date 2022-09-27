@@ -37,6 +37,8 @@ var main = document.querySelector('main')
 var spicyMode = document.querySelector('.main__spicy-mode')
 var spicyIconForm = document.querySelector('.spicy__choose-fighter')
 var replayButton = document.querySelector('.controls__replay-btn')
+var mainMenuButton = document.querySelector('.controls__menu-btn')
+
 var classicIcons = document.querySelectorAll('.classic__fighter-icon')
 var chosenFighters = customIconPicked.querySelectorAll('custom__fighters')
 var spicyIcons = document.querySelectorAll('.spicy__fighter-icon')
@@ -59,6 +61,7 @@ customMode.addEventListener('click', buildCustomPage)
 fightButton.addEventListener('click', playRound)
 getStartedButton.addEventListener('click', getStarted)
 main.addEventListener('dragstart', (event) => makeDraggable(event))
+mainMenuButton.addEventListener('click', loadMainMenu)
 replayButton.addEventListener('click', replayGame)
 spicyIconForm.addEventListener('click', chooseSpicyFighter)
 spicyMode.addEventListener('click', buildSpicyPage)
@@ -70,14 +73,28 @@ function assignPlayers() {
   computer = new Person()
 }
 
-function beginNewGame(fighters, fighterImages) {
-  game = new Game(fighters, fighterImages)
+function beginNewGame(fighters, fighterImages, mode) {
+  game = new Game(fighters, fighterImages, mode)
 }
 
 function hideGameModeSelection() {
   classicMode.classList.add('hidden')
   customMode.classList.add('hidden')
   spicyMode.classList.add('hidden')
+}
+
+function buildMainMenu(){
+  classicMode.classList.remove('hidden')
+  customMode.classList.remove('hidden')
+  spicyMode.classList.remove('hidden')
+}
+
+function loadMainMenu() {
+  event.preventDefault()
+  hideSpicyPage()
+  hideClassicPage()
+  hideResolvePage()
+  buildMainMenu()
 }
 
 function playRound() {
@@ -95,7 +112,7 @@ function playRound() {
 
 function buildClassicPage () {
   hideGameModeSelection()
-  beginNewGame(classicFighters, classicFighterImages)
+  beginNewGame(classicFighters, classicFighterImages, 'classic')
   classicIconForm.classList.remove('hidden')
   gameControls.classList.remove('hidden')
   instruction1.innerText = "Choose your fighter!"
@@ -125,7 +142,9 @@ function chooseClassicFighter (event) {
 
 function buildSpicyPage () {
   hideGameModeSelection()
-  beginNewGame(spicyFighters, spicyFighterImages)
+  if (game.mode !== 'spicy') {
+    beginNewGame(spicyFighters, spicyFighterImages, 'spicy')
+  }
   spicyIconForm.classList.remove('hidden')
   gameControls.classList.remove('hidden')
   instruction1.innerText = "Choose your fighter!"
@@ -155,7 +174,7 @@ function chooseSpicyFighter (event) {
 
 function buildCustomPage() {
   hideGameModeSelection()
-  beginNewGame(customFighters)
+  beginNewGame(customFighters, customFighterImages, 'custom')
   // customIconOptions.classList.remove('hidden')
   // customIconPicked.classList.remove('hidden')
   // gameControls.classList.remove('hidden')
@@ -213,16 +232,26 @@ function checkRules() {
 
 // ***** Resolve Winner *****
 
-function replayGame() {
-  event.preventDefault()
+function hideResolvePage() {
   resolveWinner.classList.add('hidden')
   replayButton.classList.add('hidden')
   fightButton.classList.remove('hidden')
-  if (game.fighters === classicFighters) {
+}
+
+function replayGame() {
+  event.preventDefault()
+  hideResolvePage()
+  if (game.mode === 'classic') {
+    console.log('classic')
     buildClassicPage()
   }
-  else if (game.fighters === spicyFighters) {
-    buildClassicPage()
+  else if (game.mode === 'spicy') {
+    console.log('spicy')
+    buildSpicyPage()
+  }
+  else if (game.mode === 'custom') {
+    console.log('custom')
+    buildCustomPage()
   }
 }
 
