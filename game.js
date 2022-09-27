@@ -56,9 +56,11 @@ class Game {
     resolveWinner.innerHTML = `
     <div class="flex">
       <img class="classic-icons" src=${human.fighterImg} alt=${human.fighter}> 
+      <img src="assets/fight.png" alt="versus">
       <img class="classic-icons" src=${computer.fighterImg} alt=${computer.fighter}>
     </div>
     <h2> ${outcome} </h2>`
+    game
   }
 }
 
