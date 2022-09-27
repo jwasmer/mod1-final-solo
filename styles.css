@@ -212,8 +212,40 @@ main {
   background-color: rgb(156, 119, 0);
 }
 
-.resolve {
-  
+.resolve__images-container {
+  align-items: center;
+}
+
+.resolve__fighters-size {
+  height: 12em;
+  width: 12em;
+  margin: 1em;
+}
+
+.resolve__fight-size {
+  height: 8em;
+  width: 8em;
+  margin: 1em;
+}
+
+.spicy__choose-fighter {
+  justify-content: center;
+  margin: 5vw;
+  height: 11vw;
+}
+
+.spicy__fighter-icon {
+  height: 10vw;
+  width: 10vw;
+  cursor: pointer;
+  transition-duration: 200ms;
+  margin: 1vw;
+}
+
+.spicy__fighter-icon:hover {
+  height: 11vw;
+  width: 11vw;
+  transition-duration: 200ms;
 }
 
 .score {
