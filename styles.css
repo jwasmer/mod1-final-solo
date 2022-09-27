@@ -15,8 +15,8 @@ main {
 }
 
 .chosen-fighter {
-  height: 11vw;
-  width: 11vw;
+  height: 12vw !important;
+  width: 12vw !important;
 }
 
 .classic__choose-fighter {
