@@ -56,9 +56,9 @@ class Game {
     }
     resolveWinner.innerHTML = `
     <div class="flex">
-      <img src=${human.fighterImg} alt=${human.fighter}> 
-      <img src="assets/fight.png" alt="versus">
-      <img src=${computer.fighterImg} alt=${computer.fighter}>
+      <img class="resolve__fighters-size" src=${human.fighterImg} alt=${human.fighter}> 
+      <img class="resolve__fight-size" src="assets/fight.png" alt="versus">
+      <img class="resolve__fighters-size" src=${computer.fighterImg} alt=${computer.fighter}>
     </div>
     <h2> ${outcome} </h2>`
     gameControls.classList.remove('hidden')
