@@ -212,20 +212,20 @@ main {
   background-color: rgb(156, 119, 0);
 }
 
-.resolve {
-  border: 2px solid black;
-  height: 40vw;
-  width: 40vw;
+.resolve__images-container {
+  align-items: center;
 }
 
 .resolve__fighters-size {
   height: 12em;
   width: 12em;
+  margin: 1em;
 }
 
 .resolve__fight-size {
   height: 8em;
   width: 8em;
+  margin: 1em;
 }
 
 .spicy__choose-fighter {

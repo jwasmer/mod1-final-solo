@@ -55,7 +55,7 @@ class Game {
       humanScore.innerText = `Wins: ${human.wins}`
     }
     resolveWinner.innerHTML = `
-    <div class="flex">
+    <div class="flex resolve__images-container">
       <img class="resolve__fighters-size" src=${human.fighterImg} alt=${human.fighter}> 
       <img class="resolve__fight-size" src="assets/fight.png" alt="versus">
       <img class="resolve__fighters-size" src=${computer.fighterImg} alt=${computer.fighter}>
