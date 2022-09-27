@@ -1,6 +1,7 @@
 class Game {
-  constructor(fightersArray, mode) {
-    this.fighters = fightersArray
+  constructor(fighters, fighterImages) {
+    this.fighters = fighters
+    this.fighterImages = fighterImages
     this.centeredFighters = []
     this.isOdd = true
     this.midpoint;
@@ -55,9 +56,9 @@ class Game {
     }
     resolveWinner.innerHTML = `
     <div class="flex">
-      <img class="classic-icons" src=${human.fighterImg} alt=${human.fighter}> 
+      <img src=${human.fighterImg} alt=${human.fighter}> 
       <img src="assets/fight.png" alt="versus">
-      <img class="classic-icons" src=${computer.fighterImg} alt=${computer.fighter}>
+      <img src=${computer.fighterImg} alt=${computer.fighter}>
     </div>
     <h2> ${outcome} </h2>`
     gameControls.classList.remove('hidden')
