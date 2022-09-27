@@ -53,12 +53,6 @@ startPlayingButton.addEventListener('click', checkRules)
 
 // ***** Main Menu *****
 
-function hideGameModeSelection() {
-  classicMode.classList.add('hidden')
-  customMode.classList.add('hidden')
-  spicyMode.classList.add('hidden')
-}
-
 function assignPlayers() {
   human = new Person()
   computer = new Person()
@@ -66,6 +60,12 @@ function assignPlayers() {
 
 function beginNewGame(fightersArray, mode) {
   game = new Game(fightersArray, mode)
+}
+
+function hideGameModeSelection() {
+  classicMode.classList.add('hidden')
+  customMode.classList.add('hidden')
+  spicyMode.classList.add('hidden')
 }
 
 // ***** Classic Mode *****
@@ -125,22 +125,6 @@ function buildCustomPage() {
   instruction1.innerText = "Welcome to Custom Mode!"
 }
 
-function checkRules() {
-  event.preventDefault()
-  customRules.classList.add('hidden')
-  finalizeRules.classList.remove('hidden')
-  customFighters.forEach(image => {drawsAgainst.innerHTML += image})
-}
-
-function updateCustomFighters() {
-  event.preventDefault()
-  instruction1.innerText = "Check your matchups!"
-  customIconOptions.classList.add('hidden')
-  customIconPicked.classList.add('hidden')
-  checkOrderButton.classList.add('hidden')
-  customRules.classList.remove('hidden')
-}
-
 function getStarted(event) {
   event.preventDefault()
   customInstructions.classList.add('hidden')
@@ -171,6 +155,22 @@ function dropFighter(event) {
     customIconPicked.removeChild(fighterDragged)
     customIconOptions.appendChild(fighterDragged)
   }
+}
+
+function updateCustomFighters() {
+  event.preventDefault()
+  instruction1.innerText = "Check your matchups!"
+  customIconOptions.classList.add('hidden')
+  customIconPicked.classList.add('hidden')
+  checkOrderButton.classList.add('hidden')
+  customRules.classList.remove('hidden')
+}
+
+function checkRules() {
+  event.preventDefault()
+  customRules.classList.add('hidden')
+  finalizeRules.classList.remove('hidden')
+  customFighters.forEach(image => {drawsAgainst.innerHTML += image})
 }
 
 // ***** Resolve Winner *****
