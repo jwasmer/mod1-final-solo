@@ -1,7 +1,8 @@
 class Game {
-  constructor(fighters, fighterImages) {
+  constructor(fighters, fighterImages, mode) {
     this.fighters = fighters
     this.fighterImages = fighterImages
+    this.mode = mode
     this.centeredFighters = []
     this.isOdd = true
     this.midpoint;
@@ -61,8 +62,12 @@ class Game {
       <img class="resolve__fighters-size" src=${computer.fighterImg} alt=${computer.fighter}>
     </div>
     <h2> ${outcome} </h2>`
-    gameControls.classList.remove('hidden')
     fightButton.classList.add('hidden')
+
+    setTimeout(() => {
+      gameControls.classList.remove('hidden')
+      replayButton.classList.remove('hidden')
+    }, 750)
   }
 }
 
