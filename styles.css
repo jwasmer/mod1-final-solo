@@ -14,16 +14,9 @@ main {
   background-color:aliceblue
 }
 
-.custom__choose-fighter-btn {
-  border: 1px solid black;
-  background-color: lightcoral;
-  height: 1.75em;
-  width: 10em;
-  font-size: 2em;
-  color: white;
-  font-family: inherit;
-  border-radius: 0.5em;
-  margin-top: 3vh;
+.chosen-fighter {
+  height: 11vw;
+  width: 11vw;
 }
 
 .classic__choose-fighter {
@@ -51,15 +44,52 @@ main {
   align-items: center;
 }
 
-.custom__fighters-chosen {
-  display: grid;
-  height: 14vw;
-  width: 25vw;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(3, 33%);
-  overflow-y: scroll;
-  scrollbar-width: thin;
+.controls__fight-btn {
+  height: 2em;
+  width: 6em;
+  background-color: lightcoral;
+  font-size: 2em;
+  color: white;
+  font-family: inherit;
+  border: 1px solid black;
+  border-radius: .5em;
+}
+
+.controls__menu-btn {
+  height: 2em;
+  width: 6em;
+  background-color: lightcoral;
+  font-size: 2em;
+  color: white;
+  font-family: inherit;
+  margin: 0.5em;
+  border: 1px solid black;
+  border-radius: .5em;
+}
+
+.custom__choose-fighter-btn {
+  border: 1px solid black;
+  background-color: lightcoral;
+  height: 1.75em;
+  width: 10em;
+  font-size: 2em;
+  color: white;
+  font-family: inherit;
+  border-radius: 0.5em;
+  margin-top: 3vh;
+}
+
+.custom__choose-fighter-text {
+  width: 50%;
+  height: auto;
   border: 2px solid black;
+  border-radius: 1em;
+  text-align: center;
+  font-size: x-large;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 6vh;
+  margin-top: 6vh;
 }
 
 .custom__fighter-choices {
@@ -81,17 +111,21 @@ main {
   margin: 5px;
 }
 
-.custom__choose-fighter-text {
-  width: 50%;
-  height: auto;
+.custom__fighters-chosen {
+  display: grid;
+  height: 14vw;
+  width: 25vw;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(3, 33%);
+  overflow-y: scroll;
+  scrollbar-width: thin;
   border: 2px solid black;
-  border-radius: 1em;
-  text-align: center;
-  font-size: x-large;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin-bottom: 6vh;
-  margin-top: 6vh;
+}
+
+.custom__fighters-chosen-text {
+  margin-top: 3vh;
+  margin-bottom: 1vh;
+  font-size: 3em;
 }
 
 .custom__instruction-text {
@@ -110,18 +144,6 @@ main {
   /* transition: opacity 1000ms; */
 }
 
-/* .fight-button  */
-.controls__fight-btn {
-  height: 2em;
-  width: 6em;
-  background-color: lightcoral;
-  font-size: 2em;
-  color: white;
-  font-family: inherit;
-  border: 1px solid black;
-  border-radius: .5em;
-}
-
 .flex {
   display: flex;
 }
@@ -134,24 +156,6 @@ main {
   margin-top: 1vh;
   margin-bottom: 1vh;
   font-size: 3em;
-}
-
-.custom__fighters-chosen-text {
-  margin-top: 3vh;
-  margin-bottom: 1vh;
-  font-size: 3em;
-}
-
-.controls__menu-btn {
-  height: 2em;
-  width: 6em;
-  background-color: lightcoral;
-  font-size: 2em;
-  color: white;
-  font-family: inherit;
-  margin: 0.5em;
-  border: 1px solid black;
-  border-radius: .5em;
 }
 
 .main__classic-mode {
@@ -208,13 +212,8 @@ main {
   background-color: rgb(156, 119, 0);
 }
 
-.resolve
-{
+.resolve {
   
-}
-
-.score__wins-text {
-  font-size: 1.5em;
 }
 
 .score {
@@ -226,9 +225,8 @@ main {
   font-size: 2.5em;
 }
 
-.chosen-fighter {
-  height: 11vw;
-  width: 11vw;
+.score__wins-text {
+  font-size: 1.5em;
 }
 
 .title {
