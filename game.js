@@ -3,6 +3,8 @@ class Game {
     this.fighters = fighters
     this.fighterImages = fighterImages
     this.mode = mode || ''
+    this.human =
+    this.computer =
     this.centeredFighters = []
     this.isOdd = true
     this.midpoint;

@@ -67,6 +67,10 @@ main {
   border-radius: .5em;
 }
 
+.controls__fight-btn:disabled {
+  background-color: gray;
+}
+
 .controls__menu-btn {
   height: 2em;
   width: 6em;
