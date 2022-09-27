@@ -39,22 +39,26 @@ class Game {
   }
 
   determineWinner(computerFighter, humanFighter, midpoint) {
-    resolveWinner.innerHTML = `
-    <img class="classic-icons" src=${human.fighterImg} alt=${human.fighter}> 
-    <img class="classic-icons" src=${computer.fighterImg} alt=${computer.fighter}>`
+    var outcome = ''
     if (computer.index === midpoint) {
-      console.log(`You both chose ${computerFighter}, it's a draw!`)
+      outcome = `You both chose ${computerFighter}, it's a draw!`
     }
     else if (computer.index > midpoint) {
-      console.log(`Your opponent's ${computerFighter} beats your ${humanFighter}! Defeat!`)
+      outcome = `Your opponent's ${computerFighter} beats your ${humanFighter}! Defeat!`
       computer.wins++
       computerScore.innerText = `Wins: ${computer.wins}`
     }
     else {
-      console.log(`Your ${humanFighter} defeats your opponent's ${computerFighter}! Victory!`)
+      outcome = `Your ${humanFighter} defeats your opponent's ${computerFighter}! Victory!`
       human.wins++
       humanScore.innerText = `Wins: ${human.wins}`
     }
+    resolveWinner.innerHTML = `
+    <div class="flex">
+      <img class="classic-icons" src=${human.fighterImg} alt=${human.fighter}> 
+      <img class="classic-icons" src=${computer.fighterImg} alt=${computer.fighter}>
+    </div>
+    <h2> ${outcome} </h2>`
   }
 }
 
