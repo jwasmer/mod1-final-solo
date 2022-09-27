@@ -1,6 +1,7 @@
 class Person {
   constructor() {
     this.fighter = ''
+    this.fighterImg = ''
     this.offset = 0
     this.index = 0
     this.wins = 0

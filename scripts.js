@@ -1,7 +1,5 @@
-//TODO:
-//Make sure adjusting the view window size doesn't ruin the custom icons grid! 
-
 var classicFighters = ['rock', 'paper', 'scissors']
+var classicFighterImages = ['assets/rocks.png', 'assets/paper-roll.png', 'assets/scissor.png']
 var customFighters = []
 
 var computer;
@@ -123,16 +121,21 @@ function hideClassicPage() {
   instruction1.innerText = "Fight!"
 }
 
-function chooseClassicFighter (event) {
-  if (human.fighter !== event.target.alt) {
-    classicIcons.forEach(icon => icon.classList.remove('selected-fighter'))
-    human.fighter = event.target.alt
-    event.target.classList.add('selected-fighter')
+function updateResolvePage() {
+  event.preventDefault()
+  if (human.fighter === '') {
+    console.log("You need to pick a fighter")
+    return 
   }
-  else if (event.target.alt === human.fighter) {
-    human.takeTurn('')
-    event.target.classList.remove('selected-fighter')
-  }
+  classicFighters.forEach(fighter => {
+    if (fighter === human.fighter) {
+      human.fighterImg = classicFighterImages[classicFighters.indexOf(fighter)]
+    }
+    if (fighter === computer.fighter) {
+      computer.fighterImg = classicFighterImages[classicFighters.indexOf(fighter)]
+    }
+  })
+  hideClassicPage()
 }
 
 function buildCustomPage() {
@@ -145,11 +148,18 @@ function buildCustomPage() {
   instruction1.innerText = "Welcome to Custom Mode!"
 }
 
-// function revealGameModeSelection() {
-//   instructionHeader.innerText = "Choose your game!"
-// }
-
-// Game logic
+function chooseClassicFighter (event) {
+  if (human.fighter !== event.target.alt) {
+    classicIcons.forEach(icon => icon.classList.remove('selected-fighter'))
+    human.takeTurn(event.target.alt)
+    human.fighterImg = event.target.outerHTML
+    event.target.classList.add('selected-fighter')
+  }
+  else if (event.target.alt === human.fighter) {
+    human.takeTurn('')
+    event.target.classList.remove('selected-fighter')
+  }
+}
 
 function assignPlayers() {
   human = new Person()
@@ -163,6 +173,7 @@ function beginNewGame(fightersArray, mode) {
 function playClassicRound() {
   event.preventDefault();
   computer.takeTurn()
+  updateResolvePage()
   game.findMidpoint(game.fighters)
   game.findFighterOffset(game.midpoint, game.fighters, human.fighter)
   game.centerFighterOnMidpoint(game.fighters, human.offset)

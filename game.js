@@ -39,6 +39,9 @@ class Game {
   }
 
   determineWinner(computerFighter, humanFighter, midpoint) {
+    resolveWinner.innerHTML = `
+    <img class="classic-icons" src=${human.fighterImg} alt=${human.fighter}> 
+    <img class="classic-icons" src=${computer.fighterImg} alt=${computer.fighter}>`
     if (computer.index === midpoint) {
       console.log(`You both chose ${computerFighter}, it's a draw!`)
     }
