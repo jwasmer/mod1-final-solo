@@ -9,28 +9,28 @@ var fighterDragged;
 
 assignPlayers()
 
-var checkOrderButton = document.querySelector('.check-order-button')
-var classicIconForm = document.querySelector('.classic-icon-form')
+var checkOrderButton = document.querySelector('.custom__choose-fighter-btn')
+var classicIconForm = document.querySelector('.classic__choose-fighter')
 var customIconForm = document.querySelector('.custom-icon-form')
-var customIconOptions = document.querySelector('.custom-icon-options')
-var customIconPicked = document.querySelector('.custom-icon-picked')
-var customIcons = document.querySelector('.custom-icons')
-var customInstructions = document.querySelector('.custom-instructions')
+var customIconOptions = document.querySelector('..custom__fighter-choices')
+var customIconPicked = document.querySelector('.custom__fighters-chosen')
+var customIcons = document.querySelector('custom__fighters')
+var customInstructions = document.querySelector('.custom__instruction-text')
 var customRules = document.querySelector('.custom-rules')
 var drawsAgainst = document.querySelector('.draws-against')
-var fightButton = document.querySelector('.fight-button')
+var fightButton = document.querySelector('.controls__fight-btn')
 var fighterLabel = document.querySelector('.fighter-label')
 var finalizeRules = document.querySelector('.finalize-rules')
-var getStartedButton = document.querySelector('.get-started-button')
-var instruction1 = document.querySelector('.instruction-1')
-var instruction2 = document.querySelector('.instruction-2')
+var getStartedButton = document.querySelector('.custom__leave-tutorial-btn')
+var instruction1 = document.querySelector('.subtitle')
+var instruction2 = document.querySelector('.custom__fighters-chosen-text')
 var main = document.querySelector('main')
-var resolveWinner = document.querySelector('.resolve-winner')
-var spicyMode = document.querySelector('.menu-spicy-mode')
+var resolveWinner = document.querySelector('.resolve')
+var spicyMode = document.querySelector('.main__spicy-mode')
 var startPlayingButton = document.querySelector('.start-playing-button')
 
-var classicIcons = document.querySelectorAll('.classic-icons')
-var chosenFighters = customIconPicked.querySelectorAll('.custom-icons')
+var classicIcons = document.querySelectorAll('.classic__fighter-icon')
+var chosenFighters = customIconPicked.querySelectorAll('custom__fighters')
 
 var classicMode = document.getElementById('classic')
 var computerScore = document.getElementById('computer-score')
@@ -87,14 +87,14 @@ function hideClassicPage() {
 
 function chooseClassicFighter (event) {
   if (human.fighter !== event.target.alt) {
-    classicIcons.forEach(icon => icon.classList.remove('selected-fighter'))
+    classicIcons.forEach(icon => icon.classList.remove('chosen-fighter'))
     human.takeTurn(event.target.alt)
     human.fighterImg = event.target.outerHTML
-    event.target.classList.add('selected-fighter')
+    event.target.classList.add('chosen-fighter')
   }
   else if (event.target.alt === human.fighter) {
     human.takeTurn('')
-    event.target.classList.remove('selected-fighter')
+    event.target.classList.remove('chosen-fighter')
   }
 }
 

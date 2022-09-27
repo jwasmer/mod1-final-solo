@@ -5,65 +5,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik" rel="stylesheet">
   </head>
   <body class="flex">
-    <section class="flex column score-bar">
-      <h2 class="score-title"> Human </h2>
-      <p class="score" id="human-score"> Wins: 0 </p>
+    <section class="flex column score">
+      <h2 class="score__player-id"> Human </h2>
+      <p class="score__wins-text" id="human-score"> Wins: 0 </p>
     </section>
     <main class="flex column">
       <header class="flex column">
         <h1 class="title"> Rock, Paper, Scissors </h1>
-        <h2 class="instruction-1"> Choose your game! </h2> 
+        <h2 class="subtitle"> Choose your game! </h2> 
       </header>
-      <form class="flex classic-icon-form hidden">
-        <img class="classic-icons" src="assets/rocks.png" alt="rock">
-        <img class="classic-icons" src="assets/paper-roll.png" alt="paper">
-        <img class="classic-icons" src="assets/scissor.png" alt="scissors">
+      <form class="flex classic__choose-fighter hidden">
+        <img class="classic__fighter-icon" src="assets/rocks.png" alt="rock">
+        <img class="classic__fighter-icon" src="assets/paper-roll.png" alt="paper">
+        <img class="classic__fighter-icon" src="assets/scissor.png" alt="scissors">
       </form>
-      <form class="flex column resolve-winner hidden">
+      <form class="flex column resolve hidden">
 
       </form>
-      <form class="flex column custom-instructions hidden">
-        <div class="pick-fighters-tutorial">
+      <form class="flex column custom__instruction-text hidden">
+        <div class="custom__choose-fighter-text">
           <p>Custom Mode allows you to build your own version of Rock, Paper, Scissors! Look through the fighters on the next screen and drag down your favorites. </p>
           <p>There's only one rule--the number of fighters you choose has to be odd!</p>
         </div>
-        <button class="get-started-button">Get Started!</button>
+        <button class="custom__leave-tutorial-btn">Get Started!</button>
       </form>
       <form class="flex column"">
-        <div class="custom-icon-options hidden">
-          <img class="custom-icons" data-draggable="true" src="assets/anaconda.png" alt="snake">
-          <img class="custom-icons" data-draggable="true" src="assets/bee.png" alt="bee">
-          <img class="custom-icons" data-draggable="true" src="assets/clip.png" alt="clip">
-          <img class="custom-icons" data-draggable="true" src="assets/crab.png" alt="crab">
-          <img class="custom-icons" data-draggable="true" src="assets/cyclops.png" alt="cyclops">
-          <img class="custom-icons" data-draggable="true" src="assets/fossil.png" alt="fossil">
-          <img class="custom-icons" data-draggable="true" src="assets/ghost.png" alt="ghost">
-          <img class="custom-icons" data-draggable="true" src="assets/macaw.png" alt="bird">
-          <img class="custom-icons" data-draggable="true" src="assets/meteor.png" alt="meteor">
-          <img class="custom-icons" data-draggable="true" src="assets/mummy.png" alt="mummy">
-          <img class="custom-icons" data-draggable="true" src="assets/mushroom.png" alt="mushroom">
-          <img class="custom-icons" data-draggable="true" src="assets/notebook.png" alt="notebook">
-          <img class="custom-icons" data-draggable="true" src="assets/olive-oil.png" alt="olive oil">
-          <img class="custom-icons" data-draggable="true" src="assets/owl.png" alt="owl">
-          <img class="custom-icons" data-draggable="true" src="assets/paper-roll.png" alt="paper">
-          <img class="custom-icons" data-draggable="true" src="assets/pelican.png" alt="pelican">
-          <img class="custom-icons" data-draggable="true" src="assets/pumpkin.png" alt="pumpkin">
-          <img class="custom-icons" data-draggable="true" src="assets/quaesitosaurus.png" alt="quaesitosaurus">
-          <img class="custom-icons" data-draggable="true" src="assets/rocks.png" alt="rock">
-          <img class="custom-icons" data-draggable="true" src="assets/scissor.png" alt="scissors">
-          <img class="custom-icons" data-draggable="true" src="assets/snail.png" alt="snail">
-          <img class="custom-icons" data-draggable="true" src="assets/spider.png" alt="spider">
-          <img class="custom-icons" data-draggable="true" src="assets/squirrel.png" alt="squirrel">
-          <img class="custom-icons" data-draggable="true" src="assets/styracosaurus.png" alt="styracosaurus">
-          <img class="custom-icons" data-draggable="true" src="assets/tape.png" alt="tape">
-          <img class="custom-icons" data-draggable="true" src="assets/thunder.png" alt="storm">
-          <img class="custom-icons" data-draggable="true" src="assets/tyrannosaurus-rex.png" alt="tyrannosaurus">
-          <img class="custom-icons" data-draggable="true" src="assets/volcano.png" alt="volcano">
-          <img class="custom-icons" data-draggable="true" src="assets/water-drop.png" alt="water">
-          <img class="custom-icons" data-draggable="true" src="assets/whale.png" alt="whale">
+        <div class=".custom__fighter-choices hidden">
+          <img class="custom__fighters" data-draggable="true" src="assets/anaconda.png" alt="snake">
+          <img class="custom__fighters" data-draggable="true" src="assets/bee.png" alt="bee">
+          <img class="custom__fighters" data-draggable="true" src="assets/clip.png" alt="clip">
+          <img class="custom__fighters" data-draggable="true" src="assets/crab.png" alt="crab">
+          <img class="custom__fighters" data-draggable="true" src="assets/cyclops.png" alt="cyclops">
+          <img class="custom__fighters" data-draggable="true" src="assets/fossil.png" alt="fossil">
+          <img class="custom__fighters" data-draggable="true" src="assets/ghost.png" alt="ghost">
+          <img class="custom__fighters" data-draggable="true" src="assets/macaw.png" alt="bird">
+          <img class="custom__fighters" data-draggable="true" src="assets/meteor.png" alt="meteor">
+          <img class="custom__fighters" data-draggable="true" src="assets/mummy.png" alt="mummy">
+          <img class="custom__fighters" data-draggable="true" src="assets/mushroom.png" alt="mushroom">
+          <img class="custom__fighters" data-draggable="true" src="assets/notebook.png" alt="notebook">
+          <img class="custom__fighters" data-draggable="true" src="assets/olive-oil.png" alt="olive oil">
+          <img class="custom__fighters" data-draggable="true" src="assets/owl.png" alt="owl">
+          <img class="custom__fighters" data-draggable="true" src="assets/paper-roll.png" alt="paper">
+          <img class="custom__fighters" data-draggable="true" src="assets/pelican.png" alt="pelican">
+          <img class="custom__fighters" data-draggable="true" src="assets/pumpkin.png" alt="pumpkin">
+          <img class="custom__fighters" data-draggable="true" src="assets/quaesitosaurus.png" alt="quaesitosaurus">
+          <img class="custom__fighters" data-draggable="true" src="assets/rocks.png" alt="rock">
+          <img class="custom__fighters" data-draggable="true" src="assets/scissor.png" alt="scissors">
+          <img class="custom__fighters" data-draggable="true" src="assets/snail.png" alt="snail">
+          <img class="custom__fighters" data-draggable="true" src="assets/spider.png" alt="spider">
+          <img class="custom__fighters" data-draggable="true" src="assets/squirrel.png" alt="squirrel">
+          <img class="custom__fighters" data-draggable="true" src="assets/styracosaurus.png" alt="styracosaurus">
+          <img class="custom__fighters" data-draggable="true" src="assets/tape.png" alt="tape">
+          <img class="custom__fighters" data-draggable="true" src="assets/thunder.png" alt="storm">
+          <img class="custom__fighters" data-draggable="true" src="assets/tyrannosaurus-rex.png" alt="tyrannosaurus">
+          <img class="custom__fighters" data-draggable="true" src="assets/volcano.png" alt="volcano">
+          <img class="custom__fighters" data-draggable="true" src="assets/water-drop.png" alt="water">
+          <img class="custom__fighters" data-draggable="true" src="assets/whale.png" alt="whale">
         </div>
-        <div class="custom-icon-picked hidden"></div>
-        <button class="check-order-button hidden"> Fighters Chosen! </button>
+        <div class="custom__fighters-chosen hidden"></div>
+        <button class="custom__choose-fighter-btn hidden"> Fighters Chosen! </button>
       </form>
       <form class="flex column custom-rules hidden">
         <div class="game-rules-tutorial">
@@ -93,39 +93,39 @@
         </div>
       </form>
       <form class="flex column hidden" id="game-controls" >
-        <button class="fight-button">Fight!</button>
-        <button class="main-menu-button">Main Menu</button>
+        <button class="controls__fight-btn">Fight!</button>
+        <button class="controls__menu-btn">Main Menu</button>
       </form>
-      <form class="flex column menu-classic-mode" id="classic">
+      <form class="flex column main__classic-mode" id="classic">
         <h3> Classic </h3>
-        <div class="flex menu-icon-container">
-          <img class="menu-icons" src="assets/rocks.png" alt="rock">
-          <img class="menu-icons" src="assets/paper-roll.png" alt="paper">
-          <img class="menu-icons" src="assets/scissor.png" alt="scissors">
+        <div class="flex main__images-container">
+          <img class="main__fighter-images" src="assets/rocks.png" alt="rock">
+          <img class="main__fighter-images" src="assets/paper-roll.png" alt="paper">
+          <img class="main__fighter-images" src="assets/scissor.png" alt="scissors">
         </div>
       </form>
-      <form class="flex column menu-spicy-mode" id="spicy"> 
+      <form class="flex column main__spicy-mode" id="spicy"> 
         <h3> Spicy </h3>
-        <div class="flex menu-icon-container">
-          <img class="menu-icons" src="assets/meteor.png" alt="meteor">
-          <img class="menu-icons" src="assets/tyrannosaurus-rex.png" alt="tyrannosaurus">
-          <img class="menu-icons" src="assets/whale.png" alt="whale">
-          <img class="menu-icons" src="assets/water-drop.png" alt="water">
-          <img class="menu-icons" src="assets/fossil.png" alt="fossil">
+        <div class="flex main__images-container">
+          <img class="main__fighter-images" src="assets/meteor.png" alt="meteor">
+          <img class="main__fighter-images" src="assets/tyrannosaurus-rex.png" alt="tyrannosaurus">
+          <img class="main__fighter-images" src="assets/whale.png" alt="whale">
+          <img class="main__fighter-images" src="assets/water-drop.png" alt="water">
+          <img class="main__fighter-images" src="assets/fossil.png" alt="fossil">
         </div>
       </form>
-      <form class="flex column menu-custom-mode" id="custom">
+      <form class="flex column main__custom-mode" id="custom">
         <h3> Custom </h3>
-        <div class="flex menu-icon-container">
-          <img class="menu-icons" src="assets/question-mark-1.png" alt="fossil">
-          <img class="menu-icons" src="assets/question-mark-2.png" alt="fossil">
-          <img class="menu-icons" src="assets/question-mark-3.png" alt="fossil">
+        <div class="flex main__images-container">
+          <img class="main__fighter-images" src="assets/question-mark-1.png" alt="fossil">
+          <img class="main__fighter-images" src="assets/question-mark-2.png" alt="fossil">
+          <img class="main__fighter-images" src="assets/question-mark-3.png" alt="fossil">
         </div>
       </form>
     </main>
-    <section class="flex column score-bar">
-      <h2 class="score-title"> Computer </h2>
-      <p class="score" id="computer-score"> Wins: 0 </p>
+    <section class="flex column score">
+      <h2 class="score__player-id"> Computer </h2>
+      <p class="score__wins-text" id="computer-score"> Wins: 0 </p>
     </section>
     <script type="text/javascript" src="person.js"></script>
     <script type="text/javascript" src="game.js"></script>

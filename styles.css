@@ -14,7 +14,6 @@ main {
   background-color:aliceblue
 }
 
-/* .check-order-button  */
 .custom__choose-fighter-btn {
   border: 1px solid black;
   background-color: lightcoral;
@@ -27,15 +26,13 @@ main {
   margin-top: 3vh;
 }
 
-/* .classic-icon-form  */
 .classic__choose-fighter {
   justify-content: center;
   margin: 5vw;
   height: 11vw;
 }
 
-/* .classic-icons  */
-.classic__fighter-icon{
+.classic__fighter-icon {
   height: 10vw;
   width: 10vw;
   cursor: pointer;
@@ -43,7 +40,6 @@ main {
   margin: 1vw;
 }
 
-/* .classic-icons:hover  */
 .classic__fighter-icon:hover {
   height: 11vw;
   width: 11vw;
@@ -55,7 +51,6 @@ main {
   align-items: center;
 }
 
-/* .custom-icon-picked  */
 .custom__fighters-chosen {
   display: grid;
   height: 14vw;
@@ -67,7 +62,6 @@ main {
   border: 2px solid black;
 }
 
-/* .custom-icon-options  */
 .custom__fighter-choices {
   display: grid;
   height: 14vw;
@@ -79,7 +73,6 @@ main {
   border: 2px solid black;
 }
 
-/* .custom-icons  */
 .custom__fighters {
   grid-column: auto;
   grid-row: auto;
@@ -88,7 +81,6 @@ main {
   margin: 5px;
 }
 
-/* .pick-fighters-tutorial  */
 .custom__choose-fighter-text {
   width: 50%;
   height: auto;
@@ -102,12 +94,10 @@ main {
   margin-top: 6vh;
 }
 
-/* .custom-instructions  */
 .custom__instruction-text {
   align-items: center;
 }
 
-/* .get-started-button  */
 .custom__leave-tutorial-btn {
   border: 1px solid black;
   background-color: lightcoral;
@@ -136,35 +126,22 @@ main {
   display: flex;
 }
 
-/* .game-controls-hidden  */
-{
-  display: none;
-}
-
-/* .game-option  */
-{
-  margin: 0;
-}
-
 .hidden {
   display: none;
 }
 
-/* .instruction-1  */
-.custom__fighter-choices-header {
+.subtitle {
   margin-top: 1vh;
   margin-bottom: 1vh;
   font-size: 3em;
 }
 
-/* .instruction-2  */
-.custom__fighters-chosen-header {
+.custom__fighters-chosen-text {
   margin-top: 3vh;
   margin-bottom: 1vh;
   font-size: 3em;
 }
 
-/* .main-menu-button  */
 .controls__menu-btn {
   height: 2em;
   width: 6em;
@@ -177,7 +154,6 @@ main {
   border-radius: .5em;
 }
 
-/* .menu-classic-mode  */
 .main__classic-mode {
   width: 25em;
   height: 9em;
@@ -188,12 +164,10 @@ main {
   border-radius: 2em;
 }
 
-/* .menu-classic-mode:hover  */
 .main__classic-mode:hover {
   background-color: rgb(129, 143, 205);
 }
 
-/* .menu-custom-mode  */
 .main__custom-mode {
   width: 25em;
   height: 9em;
@@ -204,26 +178,22 @@ main {
   border-radius: 2em;
 }
 
-/* .menu-custom-mode:hover  */
 .main__custom-mode:hover {
   background-color: rgb(205, 87, 87);
 }
 
-/* .menu-icons  */
 .main__fighter-images {
   height: 4.5em;
   width: 4.5em;
   margin-bottom: 1em;
 }
 
-/* .menu-icon-container  */
 .main__images-container {
   width: 100%;
   margin: 0px;
   justify-content: space-evenly;
 }
 
-/* .menu-spicy-mode  */
 .main__spicy-mode {
   width: 25em;
   height: 9em;
@@ -234,34 +204,29 @@ main {
   border-radius: 2em;
 }
 
-/* .menu-spicy-mode:hover  */
 .main__spicy-mode:hover {
   background-color: rgb(156, 119, 0);
 }
 
-/* .resolve-winner  */
+.resolve
 {
   
 }
 
-/* .score  */
 .score__wins-text {
   font-size: 1.5em;
 }
 
-/* .score-bar  */
 .score {
   width: 15%;
   background-color: rgb(255, 167, 104);
 }
 
-/* .score */
-.score__title-text {
+.score__player-id {
   font-size: 2.5em;
 }
 
-/* .selected-fighter  */
-.classic__chosen-fighter {
+.chosen-fighter {
   height: 11vw;
   width: 11vw;
 }
