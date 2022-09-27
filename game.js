@@ -60,7 +60,8 @@ class Game {
       <img class="classic-icons" src=${computer.fighterImg} alt=${computer.fighter}>
     </div>
     <h2> ${outcome} </h2>`
-    game
+    gameControls.classList.remove('hidden')
+    fightButton.classList.add('hidden')
   }
 }
 
