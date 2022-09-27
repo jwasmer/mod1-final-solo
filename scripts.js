@@ -215,6 +215,7 @@ function checkRules() {
 
 function replayGame() {
   event.preventDefault()
+  resolveWinner.classList.add('hidden')
   replayButton.classList.add('hidden')
   fightButton.classList.remove('hidden')
   if (game.fighters === classicFighters) {
