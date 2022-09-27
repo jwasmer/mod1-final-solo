@@ -62,9 +62,12 @@ class Game {
       <img class="resolve__fighters-size" src=${computer.fighterImg} alt=${computer.fighter}>
     </div>
     <h2> ${outcome} </h2>`
-    gameControls.classList.remove('hidden')
     fightButton.classList.add('hidden')
-    replayButton.classList.remove('hidden')
+
+    setTimeout(() => {
+      gameControls.classList.remove('hidden')
+      replayButton.classList.remove('hidden')
+    }, 750)
   }
 }
 

@@ -69,8 +69,8 @@ spicyMode.addEventListener('click', buildSpicyPage)
 // ***** Main Menu *****
 
 function assignPlayers() {
-  human = new Person()
-  computer = new Person()
+  human = new Player()
+  computer = new Player()
 }
 
 function beginNewGame(fighters, fighterImages, mode) {

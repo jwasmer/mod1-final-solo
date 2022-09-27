@@ -1,4 +1,4 @@
-class Person {
+class Player {
   constructor() {
     this.fighter = ''
     this.fighterImg = ''
