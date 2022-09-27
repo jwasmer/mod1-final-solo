@@ -15,9 +15,12 @@
         <h2 class="instruction-1"> Choose your game! </h2> 
       </header>
       <form class="flex classic-icon-form hidden">
-        <img class="classic-icons" src="assets/paper-roll.png" alt="paper">
         <img class="classic-icons" src="assets/rocks.png" alt="rock">
+        <img class="classic-icons" src="assets/paper-roll.png" alt="paper">
         <img class="classic-icons" src="assets/scissor.png" alt="scissors">
+      </form>
+      <form class="flex column resolve-winner hidden">
+
       </form>
       <form class="flex column custom-instructions hidden">
         <div class="pick-fighters-tutorial">
@@ -90,21 +93,34 @@
         </div>
       </form>
       <form class="flex column hidden" id="game-controls" >
-        <p class="fighter-label"></p>
-        <button class="fight-button">FIGHT!</button>
-        <div>
-          <button>Main Menu</button>
+        <button class="fight-button">Fight!</button>
+        <button class="main-menu-button">Main Menu</button>
+      </form>
+      <form class="flex column menu-classic-mode" id="classic">
+        <h3> Classic </h3>
+        <div class="flex menu-icon-container">
+          <img class="menu-icons" src="assets/rocks.png" alt="rock">
+          <img class="menu-icons" src="assets/paper-roll.png" alt="paper">
+          <img class="menu-icons" src="assets/scissor.png" alt="scissors">
         </div>
       </form>
-      <form class="flex column classic-mode" id="classic">
-        <h3> CLASSIC MODE </h3>
-        <p class="game-option"> rock > scissors </p>
-        <p class="game-option"> paper > rock </p>
-        <p class="game-option"> scissors > paper</p>
+      <form class="flex column menu-spicy-mode" id="spicy"> 
+        <h3> Spicy </h3>
+        <div class="flex menu-icon-container">
+          <img class="menu-icons" src="assets/meteor.png" alt="meteor">
+          <img class="menu-icons" src="assets/tyrannosaurus-rex.png" alt="tyrannosaurus">
+          <img class="menu-icons" src="assets/whale.png" alt="whale">
+          <img class="menu-icons" src="assets/water-drop.png" alt="water">
+          <img class="menu-icons" src="assets/fossil.png" alt="fossil">
+        </div>
       </form>
-      <form class="flex column custom-mode" id="custom">
-        <h3> CUSTOM MODE </h3>
-        <p class="game-option"> build your own! </p>
+      <form class="flex column menu-custom-mode" id="custom">
+        <h3> Custom </h3>
+        <div class="flex menu-icon-container">
+          <img class="menu-icons" src="assets/question-mark-1.png" alt="fossil">
+          <img class="menu-icons" src="assets/question-mark-2.png" alt="fossil">
+          <img class="menu-icons" src="assets/question-mark-3.png" alt="fossil">
+        </div>
       </form>
     </main>
     <section class="flex column score-bar">

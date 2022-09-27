@@ -46,17 +46,6 @@ main {
     transition-duration: 200ms;
   }
 
-.classic-mode {
-  width: 20%;
-  height: 20%;
-  border: 1px solid black;
-  margin: 1vh;
-  background-color: rgb(179, 193, 255);
-}
-
-  .classic-mode:hover {
-    background-color: rgb(133, 148, 213);
-  }
 
 .column {
   flex-direction: column;
@@ -135,24 +124,15 @@ main {
   /* transition: opacity 1000ms; */
 }
 
-.custom-mode {
-  width: 20%;
-  height: 20%;
-  border: 1px solid black;
-  margin: 1vh;
-  background-color: rgb(255, 137, 137);
-}
-
-  .custom-mode:hover {
-    background-color: rgb(220, 91, 91);
-  }
-
 .fight-button {
-  height: 5vw;
-  width: 10vw;
+  height: 2em;
+  width: 6em;
   background-color: lightcoral;
   font-size: 2em;
   color: white;
+  font-family: inherit;
+  border: 1px solid black;
+  border-radius: .5em;
 }
 
 .fighter-label {
@@ -187,6 +167,76 @@ main {
   margin-top: 3vh;
   margin-bottom: 1vh;
   font-size: 3em;
+}
+
+.main-menu-button {
+  height: 2em;
+  width: 6em;
+  background-color: lightcoral;
+  font-size: 2em;
+  color: white;
+  font-family: inherit;
+  margin: 0.5em;
+  border: 1px solid black;
+  border-radius: .5em;
+}
+
+.menu-classic-mode {
+  width: 25em;
+  height: 9em;
+  border: 1px solid black;
+  margin: 1vh;
+  background-color: rgb(179, 193, 255);
+  transition: 100ms;
+  border-radius: 2em;
+}
+
+.menu-classic-mode:hover {
+  background-color: rgb(129, 143, 205);
+}
+
+.menu-custom-mode {
+  width: 25em;
+  height: 9em;
+  border: 1px solid black;
+  margin: 1vh;
+  background-color: rgb(255, 137, 137);
+  transition: 100ms;
+  border-radius: 2em;
+}
+
+.menu-custom-mode:hover {
+  background-color: rgb(205, 87, 87);
+}
+
+.menu-icons {
+  height: 4.5em;
+  width: 4.5em;
+  margin-bottom: 1em;
+}
+
+.menu-icon-container {
+  width: 100%;
+  margin: 0px;
+  justify-content: space-evenly;
+}
+
+.menu-spicy-mode {
+  width: 25em;
+  height: 9em;
+  border: 1px solid black;
+  margin: 1em;
+  background-color: rgb(206, 169, 6);
+  transition: 100ms;
+  border-radius: 2em;
+}
+
+.menu-spicy-mode:hover {
+  background-color: rgb(156, 119, 0);
+}
+
+.resolve-winner {
+  
 }
 
 .score {

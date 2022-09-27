@@ -1,7 +1,5 @@
-//TODO:
-//Make sure adjusting the view window size doesn't ruin the custom icons grid! 
-
 var classicFighters = ['rock', 'paper', 'scissors']
+var classicFighterImages = ['assets/rocks.png', 'assets/paper-roll.png', 'assets/scissor.png']
 var customFighters = []
 
 var computer;
@@ -28,6 +26,8 @@ var customRules = document.querySelector('.custom-rules')
 var startPlayingButton = document.querySelector('.start-playing-button')
 var finalizeRules = document.querySelector('.finalize-rules')
 var drawsAgainst = document.querySelector('.draws-against')
+var spicyMode = document.querySelector('.menu-spicy-mode')
+var resolveWinner = document.querySelector('.resolve-winner')
 
 var classicIcons = document.querySelectorAll('.classic-icons')
 var chosenFighters = customIconPicked.querySelectorAll('.custom-icons')
@@ -103,6 +103,7 @@ function dropFighter(event) {
 function hideGameModeSelection() {
   classicMode.classList.add('hidden')
   customMode.classList.add('hidden')
+  spicyMode.classList.add('hidden')
 }
 
 function buildClassicPage () {
@@ -113,18 +114,28 @@ function buildClassicPage () {
   instruction1.innerText = "Choose your fighter!"
 }
 
-function chooseClassicFighter (event) {
-  if (human.fighter !== event.target.alt) {
-    classicIcons.forEach(icon => icon.classList.remove('selected-fighter'))
-    human.fighter = event.target.alt
-    fighterLabel.innerText = `${human.fighter.toUpperCase()}!`
-    event.target.classList.add('selected-fighter')
+function hideClassicPage() {
+  classicIconForm.classList.add('hidden')
+  gameControls.classList.add('hidden')
+  resolveWinner.classList.remove('hidden')
+  instruction1.innerText = "Fight!"
+}
+
+function updateResolvePage() {
+  event.preventDefault()
+  if (human.fighter === '') {
+    console.log("You need to pick a fighter")
+    return 
   }
-  else if (event.target.alt === human.fighter) {
-    human.takeTurn('')
-    fighterLabel.innerText = ''
-    event.target.classList.remove('selected-fighter')
-  }
+  classicFighters.forEach(fighter => {
+    if (fighter === human.fighter) {
+      human.fighterImg = classicFighterImages[classicFighters.indexOf(fighter)]
+    }
+    if (fighter === computer.fighter) {
+      computer.fighterImg = classicFighterImages[classicFighters.indexOf(fighter)]
+    }
+  })
+  hideClassicPage()
 }
 
 function buildCustomPage() {
@@ -137,11 +148,18 @@ function buildCustomPage() {
   instruction1.innerText = "Welcome to Custom Mode!"
 }
 
-// function revealGameModeSelection() {
-//   instructionHeader.innerText = "Choose your game!"
-// }
-
-// Game logic
+function chooseClassicFighter (event) {
+  if (human.fighter !== event.target.alt) {
+    classicIcons.forEach(icon => icon.classList.remove('selected-fighter'))
+    human.takeTurn(event.target.alt)
+    human.fighterImg = event.target.outerHTML
+    event.target.classList.add('selected-fighter')
+  }
+  else if (event.target.alt === human.fighter) {
+    human.takeTurn('')
+    event.target.classList.remove('selected-fighter')
+  }
+}
 
 function assignPlayers() {
   human = new Person()
@@ -155,6 +173,7 @@ function beginNewGame(fightersArray, mode) {
 function playClassicRound() {
   event.preventDefault();
   computer.takeTurn()
+  updateResolvePage()
   game.findMidpoint(game.fighters)
   game.findFighterOffset(game.midpoint, game.fighters, human.fighter)
   game.centerFighterOnMidpoint(game.fighters, human.offset)
