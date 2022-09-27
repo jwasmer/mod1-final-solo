@@ -36,7 +36,7 @@ var instruction2 = document.querySelector('.custom__fighters-chosen-text')
 var main = document.querySelector('main')
 var spicyMode = document.querySelector('.main__spicy-mode')
 var spicyIconForm = document.querySelector('.spicy__choose-fighter')
-
+var replayButton = document.querySelector('.controls__replay-btn')
 var classicIcons = document.querySelectorAll('.classic__fighter-icon')
 var chosenFighters = customIconPicked.querySelectorAll('custom__fighters')
 var spicyIcons = document.querySelectorAll('.spicy__fighter-icon')
@@ -59,6 +59,7 @@ customMode.addEventListener('click', buildCustomPage)
 fightButton.addEventListener('click', playRound)
 getStartedButton.addEventListener('click', getStarted)
 main.addEventListener('dragstart', (event) => makeDraggable(event))
+replayButton.addEventListener('click', replayGame)
 spicyIconForm.addEventListener('click', chooseSpicyFighter)
 spicyMode.addEventListener('click', buildSpicyPage)
 
@@ -211,6 +212,18 @@ function checkRules() {
 }
 
 // ***** Resolve Winner *****
+
+function replayGame() {
+  event.preventDefault()
+  replayButton.classList.add('hidden')
+  fightButton.classList.remove('hidden')
+  if (game.fighters === classicFighters) {
+    buildClassicPage()
+  }
+  else if (game.fighters === spicyFighters) {
+    buildClassicPage()
+  }
+}
 
 function updateResolvePage() {
   event.preventDefault()

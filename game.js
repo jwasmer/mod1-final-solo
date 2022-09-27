@@ -63,6 +63,7 @@ class Game {
     <h2> ${outcome} </h2>`
     gameControls.classList.remove('hidden')
     fightButton.classList.add('hidden')
+    replayButton.classList.remove('hidden')
   }
 }
 
