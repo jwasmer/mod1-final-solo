@@ -69,8 +69,8 @@ function assignPlayers() {
   computer = new Person()
 }
 
-function beginNewGame(fightersArray, mode) {
-  game = new Game(fightersArray, mode)
+function beginNewGame(fighters, fighterImages) {
+  game = new Game(fighters, fighterImages)
 }
 
 function hideGameModeSelection() {
@@ -94,7 +94,7 @@ function playRound() {
 
 function buildClassicPage () {
   hideGameModeSelection()
-  beginNewGame(classicFighters)
+  beginNewGame(classicFighters, classicFighterImages)
   classicIconForm.classList.remove('hidden')
   gameControls.classList.remove('hidden')
   instruction1.innerText = "Choose your fighter!"
@@ -124,7 +124,7 @@ function chooseClassicFighter (event) {
 
 function buildSpicyPage () {
   hideGameModeSelection()
-  beginNewGame(spicyFighters)
+  beginNewGame(spicyFighters, spicyFighterImages)
   spicyIconForm.classList.remove('hidden')
   gameControls.classList.remove('hidden')
   instruction1.innerText = "Choose your fighter!"
@@ -218,13 +218,18 @@ function updateResolvePage() {
     console.log("You need to pick a fighter")
     return 
   }
-  classicFighters.forEach(fighter => {
+  game.fighters.forEach(fighter => {
     if (fighter === human.fighter) {
-      human.fighterImg = classicFighterImages[classicFighters.indexOf(fighter)]
+      human.fighterImg = game.fighterImages[game.fighters.indexOf(fighter)]
     }
     if (fighter === computer.fighter) {
-      computer.fighterImg = classicFighterImages[classicFighters.indexOf(fighter)]
+      computer.fighterImg = game.fighterImages[game.fighters.indexOf(fighter)]
     }
   })
-  hideClassicPage()
+  if (game.fighters === classicFighters) {
+    hideClassicPage()
+  }
+  else if (game.fighters === spicyFighters) {
+    hideSpicyPage()
+  }
 }
