@@ -14,7 +14,60 @@ main {
   background-color:aliceblue
 }
 
-.check-order-button {
+.chosen-fighter {
+  height: 12vw !important;
+  width: 12vw !important;
+}
+
+.classic__choose-fighter {
+  justify-content: center;
+  margin: 5vw;
+  height: 11vw;
+}
+
+.classic__fighter-icon {
+  height: 10vw;
+  width: 10vw;
+  cursor: pointer;
+  transition-duration: 200ms;
+  margin: 1vw;
+}
+
+.classic__fighter-icon:hover {
+  height: 11vw;
+  width: 11vw;
+  transition-duration: 200ms;
+}
+
+.column {
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls__fight-btn {
+  height: 2em;
+  width: 6em;
+  background-color: lightcoral;
+  font-size: 2em;
+  color: white;
+  font-family: inherit;
+  border: 1px solid black;
+  border-radius: .5em;
+}
+
+.controls__menu-btn {
+  height: 2em;
+  width: 6em;
+  background-color: lightcoral;
+  font-size: 2em;
+  color: white;
+  font-family: inherit;
+  margin: 0.5em;
+  border: 1px solid black;
+  border-radius: .5em;
+}
+
+.custom__choose-fighter-btn {
   border: 1px solid black;
   background-color: lightcoral;
   height: 1.75em;
@@ -26,33 +79,20 @@ main {
   margin-top: 3vh;
 }
 
-.classic-icon-form {
-  justify-content: center;
-  margin: 5vw;
-  height: 11vw;
+.custom__choose-fighter-text {
+  width: 50%;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 1em;
+  text-align: center;
+  font-size: x-large;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 6vh;
+  margin-top: 6vh;
 }
 
-.classic-icons {
-  height: 10vw;
-  width: 10vw;
-  cursor: pointer;
-  transition-duration: 200ms;
-  margin: 1vw;
-}
-
-  .classic-icons:hover {
-    height: 11vw;
-    width: 11vw;
-    transition-duration: 200ms;
-  }
-
-
-.column {
-  flex-direction: column;
-  align-items: center;
-}
-
-.custom-icon-picked {
+.custom__fighter-choices {
   display: grid;
   height: 14vw;
   width: 25vw;
@@ -63,18 +103,7 @@ main {
   border: 2px solid black;
 }
 
-.custom-icon-options {
-  display: grid;
-  height: 14vw;
-  width: 25vw;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(3, 33%);
-  overflow-y: scroll;
-  scrollbar-width: thin;
-  border: 2px solid black;
-}
-
-.custom-icons {
+.custom__fighters {
   grid-column: auto;
   grid-row: auto;
   height: 4vw;
@@ -82,37 +111,28 @@ main {
   margin: 5px;
 }
 
-.pick-fighters-tutorial {
-  width: 50%;
-  height: auto;
+.custom__fighters-chosen {
+  display: grid;
+  height: 14vw;
+  width: 25vw;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(3, 33%);
+  overflow-y: scroll;
+  scrollbar-width: thin;
   border: 2px solid black;
-  border-radius: 1em;
-  text-align: center;
-  font-size: x-large;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin-bottom: 6vh;
-  margin-top: 6vh;
 }
 
-.game-rules-tutorial {
-  width: 50%;
-  height: auto;
-  border: 2px solid black;
-  border-radius: 1em;
-  text-align: center;
-  font-size: x-large;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin-bottom: 6vh;
-  margin-top: 6vh;
+.custom__fighters-chosen-text {
+  margin-top: 3vh;
+  margin-bottom: 1vh;
+  font-size: 3em;
 }
 
-.custom-instructions {
+.custom__instruction-text {
   align-items: center;
 }
 
-.get-started-button {
+.custom__leave-tutorial-btn {
   border: 1px solid black;
   background-color: lightcoral;
   height: 1.75em;
@@ -124,64 +144,21 @@ main {
   /* transition: opacity 1000ms; */
 }
 
-.fight-button {
-  height: 2em;
-  width: 6em;
-  background-color: lightcoral;
-  font-size: 2em;
-  color: white;
-  font-family: inherit;
-  border: 1px solid black;
-  border-radius: .5em;
-}
-
-.fighter-label {
-  font-size: 1.5em;
-  height: 1.5em;
-  margin: 0px;
-}
-
 .flex {
   display: flex;
-}
-
-.game-controls-hidden {
-  display: none;
-}
-
-.game-option {
-  margin: 0;
 }
 
 .hidden {
   display: none;
 }
 
-.instruction-1 {
+.subtitle {
   margin-top: 1vh;
   margin-bottom: 1vh;
   font-size: 3em;
 }
 
-.instruction-2 {
-  margin-top: 3vh;
-  margin-bottom: 1vh;
-  font-size: 3em;
-}
-
-.main-menu-button {
-  height: 2em;
-  width: 6em;
-  background-color: lightcoral;
-  font-size: 2em;
-  color: white;
-  font-family: inherit;
-  margin: 0.5em;
-  border: 1px solid black;
-  border-radius: .5em;
-}
-
-.menu-classic-mode {
+.main__classic-mode {
   width: 25em;
   height: 9em;
   border: 1px solid black;
@@ -191,11 +168,11 @@ main {
   border-radius: 2em;
 }
 
-.menu-classic-mode:hover {
+.main__classic-mode:hover {
   background-color: rgb(129, 143, 205);
 }
 
-.menu-custom-mode {
+.main__custom-mode {
   width: 25em;
   height: 9em;
   border: 1px solid black;
@@ -205,23 +182,23 @@ main {
   border-radius: 2em;
 }
 
-.menu-custom-mode:hover {
+.main__custom-mode:hover {
   background-color: rgb(205, 87, 87);
 }
 
-.menu-icons {
+.main__fighter-images {
   height: 4.5em;
   width: 4.5em;
   margin-bottom: 1em;
 }
 
-.menu-icon-container {
+.main__images-container {
   width: 100%;
   margin: 0px;
   justify-content: space-evenly;
 }
 
-.menu-spicy-mode {
+.main__spicy-mode {
   width: 25em;
   height: 9em;
   border: 1px solid black;
@@ -231,86 +208,29 @@ main {
   border-radius: 2em;
 }
 
-.menu-spicy-mode:hover {
+.main__spicy-mode:hover {
   background-color: rgb(156, 119, 0);
 }
 
-.resolve-winner {
+.resolve {
   
 }
 
 .score {
-  font-size: 1.5em;
-}
-
-.score-bar {
   width: 15%;
   background-color: rgb(255, 167, 104);
 }
 
-.score-title {
+.score__player-id {
   font-size: 2.5em;
 }
 
-.selected-fighter {
-  height: 11vw;
-  width: 11vw;
+.score__wins-text {
+  font-size: 1.5em;
 }
 
 .title {
   margin-top: 2vh;
   margin-bottom: 0vh;
   font-size: 6em;
-}
-
-.start-playing-button {
-  border: 1px solid black;
-  background-color: lightcoral;
-  height: 1.75em;
-  width: 10em;
-  font-size: 2em;
-  color: white;
-  font-family: inherit;
-  border-radius: 0.5em;
-  margin-top: 3vh;
-}
-
-
-.loses-against {
-  border: 1px solid black;
-  margin-right: 5vw;
-  margin-top: 5vh;
-}
-
-.wins-against {
-  border: 1px solid black;
-  margin-left: 5vw;
-  margin-top: 5vh;
-}
-
-.draws-against {
-  width: 60vw;
-  height: 10vh;
-  border: 1px solid black;
-  justify-content: space-evenly;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-}
-
-.finalize-rules-header {
-  text-align: center;
-  font-size: 2em;
-  margin: 0.5em;
-}
-
-.finalize-rules-icons {
-  height: 14vw;
-  width: 25vw;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(3, 33%);
-  overflow-y: scroll;
-  scrollbar-width: thin;
-  border: 1px solid black;
-  display: grid;
 }
