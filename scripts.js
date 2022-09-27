@@ -1,6 +1,19 @@
 var classicFighters = ['rock', 'paper', 'scissors']
-var classicFighterImages = ['assets/rocks.png', 'assets/paper-roll.png', 'assets/scissor.png']
+var classicFighterImages = [
+  'assets/rocks.png', 
+  'assets/paper-roll.png', 
+  'assets/scissor.png']
+
+var spicyFighters = ['meteor', 'tyrannosaurus', 'whale', 'water', 'fossil']
+var spicyFighterImages = [
+  'assets/meteor.png', 
+  'assets/tyrannosaurus-rex.png', 
+  'assets/whale.png', 
+  'assets/water-drop.png', 
+  'assets/fossil.png']
+
 var customFighters = []
+var customFighterImages = []
 
 var computer;
 var game;
@@ -23,9 +36,11 @@ var instruction2 = document.querySelector('.custom__fighters-chosen-text')
 var main = document.querySelector('main')
 var resolveWinner = document.querySelector('.resolve')
 var spicyMode = document.querySelector('.main__spicy-mode')
+var spicyIconForm = document.querySelector('.spicy__choose-fighter')
 
 var classicIcons = document.querySelectorAll('.classic__fighter-icon')
 var chosenFighters = customIconPicked.querySelectorAll('custom__fighters')
+var spicyIcons = document.querySelectorAll('.spicy__fighter-icon')
 
 var classicMode = document.getElementById('classic')
 var computerScore = document.getElementById('computer-score')
@@ -41,9 +56,11 @@ customMode.addEventListener('click', buildCustomPage)
 // customIconPicked.addEventListener('drop', (event) => {dropFighter(event)})
 // customIconOptions.addEventListener('dragover', (event) => {event.preventDefault()})
 // customIconOptions.addEventListener('drop', (event) => {dropFighter(event)})
-fightButton.addEventListener('click', playClassicRound)
+fightButton.addEventListener('click', playRound)
 getStartedButton.addEventListener('click', getStarted)
 main.addEventListener('dragstart', (event) => makeDraggable(event))
+spicyIconForm.addEventListener('click', chooseSpicyFighter)
+spicyMode.addEventListener('click', buildSpicyPage)
 
 // ***** Main Menu *****
 
@@ -60,6 +77,17 @@ function hideGameModeSelection() {
   classicMode.classList.add('hidden')
   customMode.classList.add('hidden')
   spicyMode.classList.add('hidden')
+}
+
+function playRound() {
+  event.preventDefault();
+  computer.takeTurn()
+  updateResolvePage()
+  game.findMidpoint(game.fighters)
+  game.findFighterOffset(game.midpoint, game.fighters, human.fighter)
+  game.centerFighterOnMidpoint(game.fighters, human.offset)
+  game.findComputerIndex(game.centeredFighters, computer.fighter)
+  game.determineWinner(computer.fighter, human.fighter, game.midpoint)
 }
 
 // ***** Classic Mode *****
@@ -92,20 +120,35 @@ function chooseClassicFighter (event) {
   }
 }
 
-function playClassicRound() {
-  event.preventDefault();
-  computer.takeTurn()
-  updateResolvePage()
-  game.findMidpoint(game.fighters)
-  game.findFighterOffset(game.midpoint, game.fighters, human.fighter)
-  game.centerFighterOnMidpoint(game.fighters, human.offset)
-  game.findComputerIndex(game.centeredFighters, computer.fighter)
-  game.determineWinner(computer.fighter, human.fighter, game.midpoint)
-}
-
 // ***** Spicy Mode *****
 
+function buildSpicyPage () {
+  hideGameModeSelection()
+  beginNewGame(spicyFighters)
+  spicyIconForm.classList.remove('hidden')
+  gameControls.classList.remove('hidden')
+  instruction1.innerText = "Choose your fighter!"
+}
 
+function hideSpicyPage() {
+  spicyIconForm.classList.add('hidden')
+  gameControls.classList.add('hidden')
+  resolveWinner.classList.remove('hidden')
+  instruction1.innerText = "Fight!"
+}
+
+function chooseSpicyFighter (event) {
+  if (human.fighter !== event.target.alt) {
+    spicyIcons.forEach(icon => icon.classList.remove('chosen-fighter'))
+    human.takeTurn(event.target.alt)
+    human.fighterImg = event.target.outerHTML
+    event.target.classList.add('chosen-fighter')
+  }
+  else if (event.target.alt === human.fighter) {
+    human.takeTurn('')
+    event.target.classList.remove('chosen-fighter')
+  }
+}
 
 // ***** Custom Mode *****
 
