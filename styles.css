@@ -213,7 +213,19 @@ main {
 }
 
 .resolve {
-  
+  border: 2px solid black;
+  height: 40vw;
+  width: 40vw;
+}
+
+.resolve__fighters-size {
+  height: auto;
+  width: auto;
+}
+
+.resolve__fight-size {
+  height: 2em;
+  width: 2em;
 }
 
 .spicy__choose-fighter {
