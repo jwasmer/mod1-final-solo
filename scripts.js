@@ -38,7 +38,9 @@ var classicMode = document.getElementById('classic');
 var computerScore = document.getElementById('computer-score');
 var gameControls = document.getElementById('game-controls');
 var humanScore = document.getElementById('human-score');
+var resetButton = document.getElementById('reset-btn');
 var resolveWinner = document.getElementById('resolve');
+
 
 // ***** Event Listeners *****
 
@@ -47,6 +49,7 @@ classicMode.addEventListener('click', buildClassicPage);
 fightButton.addEventListener('click', playRound);
 mainMenuButton.addEventListener('click', loadMainMenu);
 replayButton.addEventListener('click', replayGame);
+resetButton.addEventListener('click', resetScore);
 spicyIconForm.addEventListener('click', chooseSpicyFighter);
 spicyMode.addEventListener('click', buildSpicyPage);
 
@@ -91,6 +94,14 @@ function playRound() {
   game.centerFighterOnMidpoint(game.fighters, human.offset);
   game.findComputerIndex(game.centeredFighters, computer.fighter);
   game.determineWinner(computer.fighter, human.fighter, game.midpoint);
+}
+
+function resetScore() {
+  event.preventDefault()
+  computer.wins = 0
+  computerScore.innerText = `Wins: ${computer.wins}`
+  human.wins = 0
+  humanScore.innerText = `Wins: ${human.wins}`
 }
 
 // ***** Classic Mode *****
