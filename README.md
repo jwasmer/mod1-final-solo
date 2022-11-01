@@ -17,7 +17,7 @@ This project builds a rock/paper/scissors game in a browser. It allows users to 
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
-This application took me about 30 hours to make. I spent a considerable amount of time developing a "custom" game mode that didn't make the final cut. In retrospect, I should have saved the custom mode until the game was 100% complete and polished. I'm currently in week 6 at Turing.
+This application took me about 25 hours to make. I spent a considerable amount of time developing a "custom" game mode that didn't make the final cut. In retrospect, I should have saved the custom mode until the game was 100% complete and polished. I'm currently about six weeks into the curriculum at Turing, so this was a good way for me to practice some OOP fundamentals.
 
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs
@@ -26,11 +26,11 @@ https://github.com/jwasmer sole contributor
 ### Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
 1. Organize and execute a project from start to finish
-1. Integrate topics covered at turing in Mod 1
+1. Practice DOM manipulation
 1. Ensure data model remains source of truth
 
 ### Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
 1. I'm very happy with my dynamic game logic. My code determines a winner without hard-coding in the solutions. I intended to leverage this to make a custom game mode, but I didn't end up having time to build that feature out.
-1. I like some of the CSS transitions I built in!
-1. A huge challenge was anticipating how much more time a custom mode would take compared to a standard mode.
+1. It was fun to play around with some of the CSS transitions to smooth out the UI interactions.
+1. A huge challenge was anticipating how much more time a custom mode would take compared to a standard mode. Lesson learned: ensure core functionality is complete before budgeting time for extra features.
